@@ -232,7 +232,7 @@ export function Coctel() {
         {/* Hero Section */}
         <section className="relative h-[60vh] md:h-[75vh] w-full flex items-center justify-center pt-20 overflow-hidden">
           <motion.img 
-            src="/images/2 de nosotros/IMG_20230713_192237.jpg" 
+            src="/images/Marisa/Marisa sola.jpg" 
             alt="Cócteles y Aperitivos" 
             className="absolute inset-0 w-full h-full object-cover object-[center_30%]"
             animate={{ scale: [1, 1.05] }}
