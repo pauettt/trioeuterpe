@@ -10,7 +10,7 @@ export function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 400);
+      setIsScrolled(window.scrollY > 50);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -80,9 +80,10 @@ export function Navbar() {
                 <Link
                   key={link.name}
                   to={link.path}
-                  className={`font-sans text-sm uppercase tracking-widest transition-colors ${textColor}`}
+                  className={`relative group font-sans text-sm uppercase tracking-widest transition-colors ${textColor} py-2`}
                 >
                   {link.name}
+                  <span className={`absolute bottom-0 left-0 w-full h-[1px] bg-current transform origin-center scale-x-0 transition-transform duration-300 ease-out group-hover:scale-x-100 ${isActive(link.path) ? "scale-x-100" : ""}`} />
                 </Link>
               );
             })}

@@ -6,7 +6,7 @@ export function Hero() {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
-    return scrollY.onChange((latest) => setIsScrolled(latest > 400));
+    return scrollY.onChange((latest) => setIsScrolled(latest > 50));
   }, [scrollY]);
 
   return (
@@ -86,7 +86,7 @@ export function Hero() {
         >
           <a
             href="/ceremonias"
-            className="inline-flex items-center justify-center px-8 py-3 border border-primary text-primary hover:bg-primary hover:text-white transition-colors duration-300 rounded-full font-sans tracking-widest uppercase text-xs shadow-sm hover:shadow-md"
+            className="inline-flex items-center justify-center px-8 py-3 border border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300 rounded-full font-sans tracking-widest uppercase text-xs hover:scale-105 hover:shadow-[0_0_20px_rgba(181,149,47,0.3)]"
           >
             Descubre nuestro repertorio
           </a>

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Play, Image as ImageIcon, Music, Video } from "lucide-react";
 import { AudioPlayer } from "../components/AudioPlayer";
+import { PageTransition } from "../components/PageTransition";
 
 // --- DATOS ---
 
@@ -225,60 +226,63 @@ function EventSection({ data, bgClass }: { data: any, bgClass: string }) {
 
 export function Coctel() {
   return (
-    <div className="w-full">
-      {/* Hero Section */}
-      <section className="relative h-[60vh] md:h-[75vh] w-full flex items-center justify-center pt-20 overflow-hidden">
-        <motion.img 
-          src="/images/Marisa/Marisa sola.jpg" 
-          alt="Cócteles y Aperitivos" 
-          className="absolute inset-0 w-full h-full object-cover object-[center_30%]"
-          animate={{ scale: [1, 1.05] }}
-          transition={{ duration: 20, ease: "linear", repeat: Infinity, repeatType: "reverse" }}
-        />
-        <div className="absolute inset-0 bg-black/50 backdrop-blur-[2px]"></div>
-        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-          <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-5xl md:text-7xl font-serif text-white mb-6"
-          >
-            Cócteles y Aperitivos
-          </motion.h1>
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-white/90 font-sans text-xl md:text-2xl font-light"
-          >
-            Welcome drinks y recepciones con estilo
-          </motion.p>
-        </div>
-      </section>
+    <PageTransition>
+      <div className="w-full relative overflow-hidden bg-surface">
+        
+        {/* Hero Section */}
+        <section className="relative h-[60vh] md:h-[75vh] w-full flex items-center justify-center pt-20 overflow-hidden">
+          <motion.img 
+            src="/images/2 de nosotros/IMG_20230713_192237.jpg" 
+            alt="Cócteles y Aperitivos" 
+            className="absolute inset-0 w-full h-full object-cover object-[center_30%]"
+            animate={{ scale: [1, 1.05] }}
+            transition={{ duration: 20, ease: "linear", repeat: Infinity, repeatType: "reverse" }}
+          />
+          <div className="absolute inset-0 bg-black/50 backdrop-blur-[2px]"></div>
+          <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
+            <motion.h1 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-5xl md:text-7xl font-serif text-white mb-6"
+            >
+              Cócteles y Aperitivos
+            </motion.h1>
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="text-white/90 font-sans text-xl md:text-2xl font-light"
+            >
+              Welcome drinks y recepciones con estilo
+            </motion.p>
+          </div>
+        </section>
 
-      {/* Description */}
-      <section className="py-24 bg-background text-center">
-        <div className="max-w-3xl mx-auto px-4 md:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <h2 className="text-3xl font-serif text-text mb-8">El arte de romper el hielo</h2>
-            <p className="text-text-muted font-sans text-lg leading-relaxed font-light mb-6">
-              El momento del cóctel o los <em>welcome drinks</em> marcan el primer instante distendido de vuestra celebración. Nuestro objetivo es crear una atmósfera elegante y relajada donde los invitados puedan charlar cómodamente mientras disfrutan de una banda sonora exquisita.
-            </p>
-            <p className="text-text-muted font-sans text-lg leading-relaxed font-light">
-              Desde arreglos acústicos de vuestras canciones pop/rock favoritas hasta clásicos del jazz que nunca pasan de moda. Un repertorio dinámico que sorprenderá y cautivará a partes iguales.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+        {/* Description */}
+        <section className="py-24 bg-background text-center">
+          <div className="max-w-3xl mx-auto px-4 md:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <h2 className="text-3xl font-serif text-text mb-8">El arte de romper el hielo</h2>
+              <p className="text-text-muted font-sans text-lg leading-relaxed font-light mb-6">
+                El momento del cóctel o los <em>welcome drinks</em> marcan el primer instante distendido de vuestra celebración. Nuestro objetivo es crear una atmósfera elegante y relajada donde los invitados puedan charlar cómodamente mientras disfrutan de una banda sonora exquisita.
+              </p>
+              <p className="text-text-muted font-sans text-lg leading-relaxed font-light">
+                Desde arreglos acústicos de vuestras canciones pop/rock favoritas hasta clásicos del jazz que nunca pasan de moda. Un repertorio dinámico que sorprenderá y cautivará a partes iguales.
+              </p>
+            </motion.div>
+          </div>
+        </section>
 
-      {/* Tabs Layout */}
-      <EventSection data={dataCoctel} bgClass="bg-surface" />
-      
-    </div>
+        {/* Tabs Layout */}
+        <EventSection data={dataCoctel} bgClass="bg-surface" />
+        
+      </div>
+    </PageTransition>
   );
 }

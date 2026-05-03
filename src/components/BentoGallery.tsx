@@ -7,6 +7,7 @@ const photos = [
   { id: 4, src: "/images/2 de nosotros/Espontanea.jpg", span: "col-span-1 row-span-2" },
   { id: 5, src: "/images/Los 3/IMG_20240518_143311991_HDR.jpg", span: "col-span-2 row-span-1" },
   { id: 6, src: "/images/Marisa/Marisa sola.jpg", span: "col-span-1 row-span-1" },
+  { id: 7, src: "/images/Los 3/fiestaaa.jpg", span: "col-span-1 row-span-1" },
 ];
 
 export function BentoGallery() {
@@ -23,26 +24,39 @@ export function BentoGallery() {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 auto-rows-[200px] md:auto-rows-[250px]">
-          {photos.map((photo, index) => (
+        <motion.div 
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={{
+            visible: {
+              transition: {
+                staggerChildren: 0.15
+              }
+            }
+          }}
+          className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 auto-rows-[200px] md:auto-rows-[250px] grid-flow-dense"
+        >
+          {photos.map((photo) => (
             <motion.div
               key={photo.id}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1, duration: 0.5 }}
+              variants={{
+                hidden: { opacity: 0, scale: 0.95 },
+                visible: { opacity: 1, scale: 1, transition: { duration: 0.6, ease: "easeOut" } }
+              }}
               whileHover={{ scale: 0.98 }}
               className={`relative rounded-3xl overflow-hidden cursor-pointer ${photo.span}`}
             >
               <img
                 src={photo.src}
                 alt="Trio Euterpe Performance"
+                loading="lazy"
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-110"
               />
               <div className="absolute inset-0 bg-black/10 hover:bg-transparent transition-colors duration-500"></div>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

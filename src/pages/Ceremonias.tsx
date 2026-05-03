@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Play, Image as ImageIcon, Music, Video } from "lucide-react";
 import { AudioPlayer } from "../components/AudioPlayer";
+import { PageTransition } from "../components/PageTransition";
 
 // --- DATOS ---
 
@@ -263,60 +264,62 @@ function CeremonySection({ data, bgClass }: { data: any, bgClass: string }) {
 
 export function Ceremonias() {
   return (
-    <div className="w-full">
-      {/* Hero Centralizado */}
-      <section className="relative h-[60vh] md:h-[75vh] w-full flex items-center justify-center pt-20 overflow-hidden">
-        <motion.img 
-          src="/images/Iglesia/IMG_20240615_171709389.jpg" 
-          alt="Ceremonias" 
-          className="absolute inset-0 w-full h-full object-cover object-center"
-          animate={{ scale: [1, 1.05] }}
-          transition={{ duration: 20, ease: "linear", repeat: Infinity, repeatType: "reverse" }}
-        />
-        <div className="absolute inset-0 bg-black/60 backdrop-blur-[2px]"></div>
-        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-          <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-5xl md:text-7xl font-serif text-white mb-6"
-          >
-            Ceremonias
-          </motion.h1>
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-white/90 font-sans text-xl md:text-2xl font-light tracking-wide"
-          >
-            La banda sonora perfecta para el "Sí, quiero"
-          </motion.p>
-        </div>
-      </section>
+    <PageTransition>
+      <div className="w-full">
+        {/* Hero Centralizado */}
+        <section className="relative h-[60vh] md:h-[75vh] w-full flex items-center justify-center pt-20 overflow-hidden">
+          <motion.img 
+            src="/images/Iglesia/IMG_20240615_171709389.jpg" 
+            alt="Ceremonias" 
+            className="absolute inset-0 w-full h-full object-cover object-center"
+            animate={{ scale: [1, 1.05] }}
+            transition={{ duration: 20, ease: "linear", repeat: Infinity, repeatType: "reverse" }}
+          />
+          <div className="absolute inset-0 bg-black/60 backdrop-blur-[2px]"></div>
+          <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
+            <motion.h1 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-5xl md:text-7xl font-serif text-white mb-6"
+            >
+              Ceremonias
+            </motion.h1>
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="text-white/90 font-sans text-xl md:text-2xl font-light tracking-wide"
+            >
+              La banda sonora perfecta para el "Sí, quiero"
+            </motion.p>
+          </div>
+        </section>
 
-      {/* Intro General */}
-      <section className="py-24 bg-background text-center">
-        <div className="max-w-3xl mx-auto px-4 md:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <h2 className="text-3xl font-serif text-text mb-8">El momento más importante</h2>
-            <p className="text-text-muted font-sans text-lg leading-relaxed font-light">
-              Entendemos que la ceremonia es el núcleo emocional de vuestra boda. Ya sea bajo la solemnidad de un templo o la calidez de un espacio civil al aire libre, adaptamos nuestra interpretación para que cada nota refleje vuestra personalidad y emocione a cada invitado.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+        {/* Intro General */}
+        <section className="py-24 bg-background text-center">
+          <div className="max-w-3xl mx-auto px-4 md:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <h2 className="text-3xl font-serif text-text mb-8">El momento más importante</h2>
+              <p className="text-text-muted font-sans text-lg leading-relaxed font-light">
+                Entendemos que la ceremonia es el núcleo emocional de vuestra boda. Ya sea bajo la solemnidad de un templo o la calidez de un espacio civil al aire libre, adaptamos nuestra interpretación para que cada nota refleje vuestra personalidad y emocione a cada invitado.
+              </p>
+            </motion.div>
+          </div>
+        </section>
 
-      {/* Ceremonia Religiosa */}
-      <CeremonySection data={dataReligiosa} bgClass="bg-surface" />
+        {/* Ceremonia Religiosa */}
+        <CeremonySection data={dataReligiosa} bgClass="bg-surface" />
 
-      {/* Ceremonia Civil */}
-      <CeremonySection data={dataCivil} bgClass="bg-background" />
+        {/* Ceremonia Civil */}
+        <CeremonySection data={dataCivil} bgClass="bg-background" />
 
-    </div>
+      </div>
+    </PageTransition>
   );
 }

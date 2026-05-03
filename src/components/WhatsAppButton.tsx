@@ -11,9 +11,21 @@ export function WhatsAppButton() {
       transition={{ delay: 1, type: "spring", stiffness: 200, damping: 20 }}
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}
-      className="fixed bottom-6 right-6 z-[100] w-14 h-14 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-shadow"
+      className="fixed bottom-6 right-6 z-[100] w-14 h-14 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-shadow relative"
       aria-label="Contactar por WhatsApp"
     >
+      <motion.div
+        className="absolute inset-0 bg-[#25D366] rounded-full z-[-1]"
+        animate={{
+          scale: [1, 1.5, 1],
+          opacity: [0.7, 0, 0]
+        }}
+        transition={{
+          duration: 2,
+          repeat: Infinity,
+          ease: "easeOut"
+        }}
+      />
       <svg
         viewBox="0 0 24 24"
         width="28"

@@ -1,8 +1,10 @@
 import { motion } from "framer-motion";
+import { PageTransition } from "../components/PageTransition";
 
 export function OtrosEventos() {
   return (
-    <div className="w-full">
+    <PageTransition>
+      <div className="w-full">
       {/* Hero Centralizado */}
       <section className="relative h-[60vh] md:h-[75vh] w-full flex items-center justify-center pt-20">
         <img 
@@ -89,5 +91,6 @@ export function OtrosEventos() {
       </section>
 
     </div>
+    </PageTransition>
   );
 }

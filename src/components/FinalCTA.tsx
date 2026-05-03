@@ -46,7 +46,7 @@ export function FinalCTA() {
             href="https://wa.me/34675615089" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="inline-block bg-white text-primary-dark font-sans tracking-[0.2em] uppercase text-sm px-10 py-4 rounded-full hover:bg-primary hover:text-white transition-colors duration-300 shadow-xl"
+            className="inline-block bg-white text-primary-dark font-sans tracking-[0.2em] uppercase text-sm px-10 py-4 rounded-full hover:bg-primary hover:text-white transition-all duration-300 shadow-xl hover:scale-105 hover:shadow-[0_0_25px_rgba(255,255,255,0.3)]"
           >
             Contactar Ahora
           </a>

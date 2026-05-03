@@ -16,6 +16,7 @@ export function TrioPresentation() {
               <img 
                 src="/images/Los 3/Los tres estudio.JPG" 
                 alt="Trio Euterpe" 
+                loading="lazy"
                 className="absolute inset-0 w-full h-full object-cover object-[75%_center]"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
