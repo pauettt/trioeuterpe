@@ -10,7 +10,7 @@ export function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > 400);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -24,6 +24,8 @@ export function Navbar() {
   ];
 
   const isActive = (path: string) => location.pathname === path;
+  const isHome = location.pathname === "/";
+  const showHeartInNav = !isHome || isScrolled;
 
   return (
     <>
@@ -34,7 +36,31 @@ export function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
           <Link to="/" className="flex items-center gap-3">
-            <img src="/Logo.jpeg" alt="Logo" className="h-10 w-auto object-contain" />
+            <div className="w-10 h-10 flex items-center justify-center">
+              {showHeartInNav && (
+                <motion.div
+                  layoutId="animated-heart"
+                  className="w-full h-full"
+                  initial={false}
+                  animate={{ color: "#B5952F", opacity: 1 }}
+                  transition={{ 
+                    layout: { type: "spring", stiffness: 200, damping: 25 },
+                    default: { duration: 0.3 }
+                  }}
+                >
+                  <svg
+                    width="100%"
+                    height="100%"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    stroke="currentColor"
+                    strokeWidth="0.5"
+                  >
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                  </svg>
+                </motion.div>
+              )}
+            </div>
             <span className="text-2xl font-serif text-primary-dark">Trío Euterpe</span>
           </Link>
 

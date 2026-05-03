@@ -7,6 +7,7 @@ import { Ceremonias } from "./pages/Ceremonias";
 import { Coctel } from "./pages/Coctel";
 import { OtrosEventos } from "./pages/OtrosEventos";
 import { WhatsAppButton } from "./components/WhatsAppButton";
+import { CookieBanner } from "./components/CookieBanner";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         </div>
         <Footer />
         <WhatsAppButton />
+        <CookieBanner />
       </main>
     </BrowserRouter>
   );

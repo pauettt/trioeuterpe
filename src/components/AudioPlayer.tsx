@@ -11,7 +11,17 @@ interface AudioPlayerProps {
 export function AudioPlayer({ title, composer, src }: AudioPlayerProps) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [progress, setProgress] = useState(0);
+  const [currentTime, setCurrentTime] = useState(0);
+  const [duration, setDuration] = useState(0);
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  const progressBarRef = useRef<HTMLDivElement>(null);
+
+  const formatTime = (time: number) => {
+    if (isNaN(time)) return "0:00";
+    const minutes = Math.floor(time / 60);
+    const seconds = Math.floor(time % 60);
+    return `${minutes}:${seconds.toString().padStart(2, '0')}`;
+  };
 
   const togglePlay = () => {
     if (isPlaying) {
@@ -45,8 +55,28 @@ export function AudioPlayer({ title, composer, src }: AudioPlayerProps) {
   // Actualización de progreso real
   const handleTimeUpdate = () => {
     if (audioRef.current && audioRef.current.duration) {
+      setCurrentTime(audioRef.current.currentTime);
       const currentProgress = (audioRef.current.currentTime / audioRef.current.duration) * 100;
       setProgress(currentProgress);
+    }
+  };
+
+  const handleLoadedMetadata = () => {
+    if (audioRef.current) {
+      setDuration(audioRef.current.duration);
+    }
+  };
+
+  const handleSeek = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (progressBarRef.current && audioRef.current && src) {
+      const rect = progressBarRef.current.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const percentage = Math.max(0, Math.min(100, (x / rect.width) * 100));
+      
+      const newTime = (percentage / 100) * audioRef.current.duration;
+      audioRef.current.currentTime = newTime;
+      setCurrentTime(newTime);
+      setProgress(percentage);
     }
   };
 
@@ -71,12 +101,24 @@ export function AudioPlayer({ title, composer, src }: AudioPlayerProps) {
         </div>
       </div>
 
-      <div className="relative h-1 bg-gray-200 rounded-full overflow-hidden">
-        <motion.div 
-          className="absolute top-0 left-0 h-full bg-primary"
-          style={{ width: `${progress}%` }}
-          layout
-        />
+      <div className="flex flex-col gap-1">
+        <div 
+          ref={progressBarRef}
+          onClick={handleSeek}
+          className="relative h-2 bg-gray-200 rounded-full overflow-hidden cursor-pointer group"
+        >
+          <motion.div 
+            className="absolute top-0 left-0 h-full bg-primary group-hover:bg-primary-dark transition-colors"
+            style={{ width: `${progress}%` }}
+            layout
+          />
+        </div>
+        {src && (
+          <div className="flex justify-between text-[10px] text-text-muted font-sans px-1">
+            <span>{formatTime(currentTime)}</span>
+            <span>{formatTime(duration)}</span>
+          </div>
+        )}
       </div>
       
       {src && (
@@ -84,7 +126,8 @@ export function AudioPlayer({ title, composer, src }: AudioPlayerProps) {
           ref={audioRef} 
           src={src} 
           onTimeUpdate={handleTimeUpdate}
-          onEnded={() => { setIsPlaying(false); setProgress(0); }}
+          onLoadedMetadata={handleLoadedMetadata}
+          onEnded={() => { setIsPlaying(false); setProgress(0); setCurrentTime(0); }}
         />
       )}
     </div>

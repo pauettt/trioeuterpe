@@ -49,10 +49,13 @@ export function Testimonials() {
               {/* Sombra estilo retro offset */}
               <div className="absolute inset-0 bg-primary translate-x-2 translate-y-2 rounded-2xl transition-transform group-hover:translate-x-3 group-hover:translate-y-3"></div>
               
-              <div className="relative bg-white border border-primary/20 p-8 rounded-2xl h-full flex flex-col transition-transform group-hover:-translate-x-1 group-hover:-translate-y-1">
-                <div className="mb-6 flex-grow">
-                  <div className="text-primary text-4xl font-serif mb-4">"</div>
-                  <p className="text-text-muted italic leading-relaxed text-lg mb-6">
+              <div className="relative bg-white border border-primary/20 p-8 rounded-2xl h-full flex flex-col transition-transform group-hover:-translate-x-1 group-hover:-translate-y-1 overflow-hidden">
+                <div className="absolute top-0 right-4 text-9xl font-serif text-primary/10 select-none pointer-events-none leading-none mt-4">
+                  "
+                </div>
+                <div className="mb-6 flex-grow relative z-10">
+                  <div className="text-primary text-3xl font-serif mb-2">"</div>
+                  <p className="text-text-muted italic leading-relaxed text-lg mb-6 font-serif">
                     {t.text}
                   </p>
                 </div>

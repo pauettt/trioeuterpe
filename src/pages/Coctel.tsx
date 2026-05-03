@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Play, Image as ImageIcon, Music, Video } from "lucide-react";
+import { AudioPlayer } from "../components/AudioPlayer";
 
 // --- DATOS ---
 
@@ -20,8 +21,19 @@ const dataCoctel = {
     "/images/Instrumentos/Cello instrumento.JPG",
     "/images/Otros bolos/IMG-20250705-WA0028.jpg"
   ],
-  videos: [],
-  audios: []
+  videos: [
+    "https://www.youtube.com/embed/YIMM2q_5jok",
+    "https://www.youtube.com/embed/kl_5G1XTSfI",
+    "https://www.youtube.com/embed/zto4Me-EDVw",
+    "https://www.youtube.com/embed/-QLR_w3QBA4",
+    "https://www.youtube.com/embed/mOzWBRRuVPE",
+    "https://www.youtube.com/embed/qsA90Sac9Vw",
+    "https://www.youtube.com/embed/pB5zcDkEssw"
+  ],
+  audios: [
+    { title: "We Are the Champions", composer: "Queen", src: "/audios/We are the champions.mp3" },
+    { title: "La Bella y la Bestia", composer: "BSO Disney (Alan Menken)", src: "/audios/bella y bestia.mp3" }
+  ]
 };
 
 // --- COMPONENTES AUXILIARES ---
@@ -44,20 +56,32 @@ function EventSection({ data, bgClass }: { data: any, bgClass: string }) {
         
         {/* Navegación de Pestañas */}
         <div className="flex flex-wrap justify-center gap-2 md:gap-4 mb-12">
-          {tabs.map((tab) => (
-            <button
-              key={tab.id}
-              onClick={() => setActiveTab(tab.id as Tab)}
-              className={`flex items-center gap-2 px-6 py-3 rounded-full font-sans text-sm tracking-widest uppercase transition-all duration-300 ${
-                activeTab === tab.id
-                  ? 'bg-primary text-white shadow-lg'
-                  : 'bg-white border border-gray-200 text-text-muted hover:border-primary/50 hover:text-primary'
-              }`}
-            >
-              {tab.icon}
-              {tab.label}
-            </button>
-          ))}
+          {tabs.map((tab) => {
+            const isActive = activeTab === tab.id;
+            return (
+              <button
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id as Tab)}
+                className={`relative flex items-center gap-2 px-6 py-3 rounded-full font-sans text-sm tracking-widest uppercase transition-colors duration-300 ${
+                  isActive
+                    ? 'text-white'
+                    : 'bg-white border border-gray-200 text-text-muted hover:border-primary/50 hover:text-primary'
+                }`}
+              >
+                {isActive && (
+                  <motion.div
+                    layoutId={`active-tab-pill-${data.title}`}
+                    className="absolute inset-0 bg-primary rounded-full shadow-lg"
+                    transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                  />
+                )}
+                <span className="relative z-10 flex items-center gap-2">
+                  {tab.icon}
+                  {tab.label}
+                </span>
+              </button>
+            );
+          })}
         </div>
 
         {/* Área de Contenido */}
@@ -105,10 +129,16 @@ function EventSection({ data, bgClass }: { data: any, bgClass: string }) {
                 <h4 className="text-2xl font-serif text-center text-primary-dark mb-10">Propuesta de Repertorio</h4>
                 <div className="space-y-8">
                   {data.repertoire.map((song: any, idx: number) => (
-                    <div key={idx} className="flex flex-col md:flex-row md:items-baseline gap-2 border-b border-gray-100 pb-4">
+                    <motion.div 
+                      key={idx} 
+                      initial={{ opacity: 0, x: -10 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.4, delay: idx * 0.1 }}
+                      className="flex flex-col md:flex-row md:items-baseline gap-2 border-b border-gray-100 pb-4"
+                    >
                       <p className="text-sm font-bold text-primary uppercase tracking-widest md:w-1/3 shrink-0">{song.moment}</p>
                       <p className="text-text font-sans font-light md:w-2/3">{song.title}</p>
-                    </div>
+                    </motion.div>
                   ))}
                 </div>
                 <p className="text-center text-xs text-text-muted mt-8 uppercase tracking-widest">
@@ -125,11 +155,24 @@ function EventSection({ data, bgClass }: { data: any, bgClass: string }) {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.3 }}
-                className="flex flex-col items-center justify-center h-full min-h-[300px] bg-white rounded-2xl border border-dashed border-gray-300"
+                className={`w-full ${data.videos.length === 0 ? "flex flex-col items-center justify-center h-full min-h-[300px] bg-white rounded-2xl border border-dashed border-gray-300" : ""}`}
               >
                 {data.videos.length > 0 ? (
-                  <div className="w-full aspect-video rounded-xl overflow-hidden shadow-lg">
-                    <p className="text-center p-10">Vídeo disponible</p>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+                    {data.videos.map((video: string, idx: number) => (
+                      <div key={idx} className="w-full aspect-video rounded-xl overflow-hidden shadow-lg border border-primary/10">
+                        <iframe
+                          width="100%"
+                          height="100%"
+                          src={video}
+                          title="YouTube video player"
+                          frameBorder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                          referrerPolicy="strict-origin-when-cross-origin"
+                          allowFullScreen
+                        ></iframe>
+                      </div>
+                    ))}
                   </div>
                 ) : (
                   <div className="text-center p-12">
@@ -154,8 +197,10 @@ function EventSection({ data, bgClass }: { data: any, bgClass: string }) {
                 className="flex flex-col items-center justify-center h-full min-h-[300px] bg-white rounded-2xl border border-dashed border-gray-300"
               >
                 {data.audios.length > 0 ? (
-                  <div className="w-full max-w-md space-y-4">
-                    <p>Audios disponibles</p>
+                  <div className="w-full max-w-2xl mx-auto space-y-4 py-8 px-4">
+                    {data.audios.map((audio: any, idx: number) => (
+                      <AudioPlayer key={idx} title={audio.title} composer={audio.composer} src={audio.src} />
+                    ))}
                   </div>
                 ) : (
                   <div className="text-center p-12">
@@ -182,11 +227,13 @@ export function Coctel() {
   return (
     <div className="w-full">
       {/* Hero Section */}
-      <section className="relative h-[60vh] md:h-[75vh] w-full flex items-center justify-center pt-20">
-        <img 
+      <section className="relative h-[60vh] md:h-[75vh] w-full flex items-center justify-center pt-20 overflow-hidden">
+        <motion.img 
           src="/images/Marisa/Marisa sola.jpg" 
           alt="Cócteles y Aperitivos" 
           className="absolute inset-0 w-full h-full object-cover object-[center_30%]"
+          animate={{ scale: [1, 1.05] }}
+          transition={{ duration: 20, ease: "linear", repeat: Infinity, repeatType: "reverse" }}
         />
         <div className="absolute inset-0 bg-black/50 backdrop-blur-[2px]"></div>
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
