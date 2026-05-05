@@ -58,7 +58,7 @@ const dataCivil = {
   images: [
     "/images/Lugares bonitos/IMG_20240504_120702346_HDR.jpg", 
     "/images/Los 3/Los3a.jpg", 
-    "/images/Los 3/Gemini_Generated_Image_q7j2w9q7j2w9q7j2.jpeg"
+    "/images/Los 3/3tocandoguay.jpg"
   ],
   videos: [
     "https://www.youtube.com/embed/mJkA2dRw0bc",
