@@ -1,0 +1,135 @@
+{
+  "navbar": {
+    "inicio": "Inicio",
+    "ceremonias": "Ceremonias",
+    "cocteles": "Cócteles y Aperitivos",
+    "otros_eventos": "Otros Eventos",
+    "contactar": "Contactar"
+  },
+  "hero": {
+    "trio": "Trío",
+    "euterpe": "Euterpe",
+    "slogan": "Ponemos música a tus momentos especiales.",
+    "sub_slogan": "Celébralo con música y será recordado para siempre",
+    "cta": "Descubre nuestro repertorio"
+  },
+  "trio_presentation": {
+    "badge": "Conócenos",
+    "title": "La excelencia musical al servicio de tus emociones",
+    "p1": "Somos Trio Euterpe, una formación de cámara compuesta por músicos profesionales con amplia trayectoria y formación en los conservatorios más prestigiosos.",
+    "p2": "Nuestra pasión es llevar la elegancia y la emoción de la música en vivo a los momentos más importantes de tu vida. Desde la majestuosidad de la música clásica hasta las bandas sonoras y versiones pop más actuales.",
+    "p3": "Trabajamos cada detalle acústico, estético y emocional para ofrecer un sonido cálido, elegante y completamente a medida. Cada evento es único, y nuestra música se adapta a vosotros para crear recuerdos imborrables."
+  },
+  "bento_gallery": {
+    "badge": "Galería Visual",
+    "title": "La Banda Sonora Visual",
+    "desc": "Un vistazo a algunas de las celebraciones donde nuestra armonía ha acompañado momentos únicos."
+  },
+  "testimonials": {
+    "title": "Ecos y Resonancias",
+    "desc": "Nuestra mayor satisfacción es saber que nuestra interpretación ha dejado una huella imborrable.",
+    "date_1": "Septiembre 2023",
+    "text_1": "Hicieron de nuestra ceremonia algo mágico. La entrada de la novia con el Canon de Pachelbel interpretado por ellos fue espectacular. Absolutamente recomendables.",
+    "date_2": "Mayo 2024",
+    "text_2": "Contratamos a Trio Euterpe para el cóctel y fue un acierto total. Tienen un repertorio moderno adaptado a clásico que dejó a todos los invitados maravillados.",
+    "date_3": "Julio 2023",
+    "text_3": "Profesionalidad desde el minuto uno. Nos ayudaron a elegir cada pieza para nuestra boda civil y el resultado fue súper emocionante. Gracias por tanto."
+  },
+  "faq": {
+    "title": "Preguntas Frecuentes",
+    "desc": "Resolvemos las dudas más habituales sobre nuestros servicios.",
+    "q1": "¿Lleváis vuestro propio equipo de amplificación?",
+    "a1": "Sí, disponemos de equipo de sonido profesional propio y de alta calidad. Nos adaptamos a las necesidades acústicas de cada espacio para garantizar que la música suene perfecta, tanto en iglesias como en fincas abiertas.",
+    "q2": "¿Podéis tocar en exteriores (jardines, playas)?",
+    "a2": "Por supuesto. Tenemos mucha experiencia tocando al aire libre. Solo necesitamos asegurarnos de tener una pequeña zona de sombra (si es pleno verano) y acceso a una toma de corriente cercana para nuestros equipos de sonido.",
+    "q3": "¿Podemos pedir una canción que no está en el repertorio?",
+    "a3": "¡Claro que sí! Entendemos que hay canciones con un valor sentimental muy especial. Si nos avisáis con suficiente antelación, podemos preparar y arreglar prácticamente cualquier tema exclusivamente para vosotros.",
+    "q4": "¿Con cuánta antelación debemos reservar?",
+    "a4": "Recomendamos hacer la reserva con al menos 6-8 meses de antelación, especialmente si os casáis en temporada alta (mayo a octubre). No obstante, siempre podéis consultarnos disponibilidad por si tuviéramos vuestra fecha libre."
+  },
+  "final_cta": {
+    "title": "¿Preparados para ponerle banda sonora a vuestro evento?",
+    "desc": "Hablemos sin compromiso. Cuéntanos qué tenéis en mente y nosotros nos encargaremos de crear la atmósfera musical perfecta.",
+    "button": "Contactar Ahora"
+  },
+  "ceremonies": {
+    "hero_title": "Ceremonias",
+    "hero_subtitle": "La banda sonora perfecta para el \"Sí, quiero\"",
+    "intro_title": "El momento más importante",
+    "intro_text": "Entendemos que la ceremonia es el núcleo emocional de vuestra boda. Ya sea bajo la solemnidad de un templo o la calidez de un espacio civil al aire libre, adaptamos nuestra interpretación para que cada nota refleje vuestra personalidad y emocione a cada invitado.",
+    "tabs": {
+      "videos": "Vídeos",
+      "audios": "Audios",
+      "gallery": "Galería",
+      "repertoire": "Repertorio"
+    },
+    "repertoire_title": "Propuesta de Repertorio",
+    "empty": {
+      "coming_soon": "Próximamente",
+      "videos_text": "Estamos preparando nuevos vídeos para esta sección. ¡Sigue nuestro canal de YouTube mientras tanto!",
+      "audios_text": "Muy pronto subiremos grabaciones de estudio para que escuches nuestra calidad sonora."
+    },
+    "rel": {
+      "title": "Ceremonia Religiosa",
+      "desc": "Comprendemos a la perfección los tiempos de la liturgia. Garantizamos que cada entrada y cada lectura estén acompañadas con sensibilidad, desde piezas clásicas hasta adaptaciones modernas respetuosas.",
+      "rep": [
+        { "moment": "Entrada novio", "title": "Cantata 147 (Bach) / Nothing else matters (Metallica) / A gusto del novio" },
+        { "moment": "Entrada novia", "title": "Marcha nupcial (Mendelssohn) / Marcha nupcial (Wagner) / Canon de Pachelbel / A gusto de la novia" },
+        { "moment": "Después del salmo", "title": "Canticorum Jubilo (Händel) / Lascia ch'io pianga (Händel)" },
+        { "moment": "Sacramento", "title": "Adagio (Albinoni) / Aria en ReM (Bach)" },
+        { "moment": "Ofertorio", "title": "Ave María (Schubert) / Ave María (Gounod)" },
+        { "moment": "Consagración", "title": "Adagio (Albinoni) / Aria en ReM (Bach)" },
+        { "moment": "Paz", "title": "Dona nobis pacem (Mozart)" },
+        { "moment": "Comunión", "title": "Canon de Pachelbel / Suite of the day \"lunchtime\" (H.Burgoyne) / BSO (Leyendas de Pasión, La Misión...)" },
+        { "moment": "Fin ceremonia", "title": "Largo Invierno (Vivaldi) / Llegada reina de Saba (Händel) / Aleluya del oratorio de El Mesiah (Händel)" },
+        { "moment": "Fotos", "title": "Música variada de fondo mientras se hacen las fotos" },
+        { "moment": "Salida", "title": "Marcha nupcial (Mendelssohn) / Marcha nupcial (Wagner)" }
+      ]
+    },
+    "civ": {
+      "title": "Ceremonia Civil",
+      "desc": "Tu boda, tus reglas. Aportamos cercanía acompañando las lecturas de amigos y familiares. Es el momento ideal para bandas sonoras épicas o esos temas pop que os definen como pareja.",
+      "rep": [
+        { "moment": "Entrada novio", "title": "A elección de los novios" },
+        { "moment": "Entrada novia", "title": "A elección de los novios / Canon de Pachelbel / A Thousand Years (Christina Perri)" },
+        { "moment": "Anillos", "title": "Aria en ReM (Bach) / Canon de Pachelbel" },
+        { "moment": "Palabras de amigos o ceremoniante", "title": "Adagio (Albinoni) / Aria en ReM (Bach) / Suite of the day \"lunchtime\" (H.Burgoyne) / BSO (Leyendas de Pasión, La Misión, Pearl Harbor, Braveheart, Memorias de África) / Nuvole Bianche (Ludovico) / Una Mattina (Ludovico) / Yesterday (The Beatles)" },
+        { "moment": "Rituales", "title": "Canon en D (Pachelbel) / Memory (Cats)" },
+        { "moment": "Fin ceremonia", "title": "Largo Invierno (Vivaldi) / Can't Help Falling in Love (Elvis) / Here Comes the Sun (The Beatles)" },
+        { "moment": "Fotos", "title": "Música variada de fondo mientras se hacen las fotos" },
+        { "moment": "Salida", "title": "Viva la Vida (Coldplay) / Marcha nupcial (Mendelssohn) / Marcha nupcial (Wagner)" }
+      ]
+    }
+  },
+  "coctel": {
+    "hero_title": "Cócteles y Aperitivos",
+    "hero_subtitle": "Welcome drinks y recepciones con estilo",
+    "intro_title": "El arte de romper el hielo",
+    "intro_p1": "El momento del cóctel o los welcome drinks marcan el primer instante distendido de vuestra celebración. Nuestro objetivo es crear una atmósfera elegante y relajada donde los invitados puedan charlar cómodamente mientras disfrutan de una banda sonora exquisita.",
+    "intro_p2": "Desde arreglos acústicos de vuestras canciones pop/rock favoritas hasta clásicos del jazz que nunca pasan de moda. Un repertorio dinámico que sorprenderá y cautivará a partes iguales.",
+    "section_title": "Música para el Cóctel",
+    "section_desc": "El momento del cóctel o los welcome drinks marcan el primer instante distendido de vuestra celebración. Nuestro objetivo es crear una atmósfera elegante y relajada donde los invitados puedan charlar cómodamente mientras disfrutan de una banda sonora exquisita. Desde arreglos acústicos de vuestras canciones pop/rock favoritas hasta clásicos del jazz que nunca pasan de moda.",
+    "repertoire_disclaimer": "* Adaptamos el repertorio a vuestros gustos para crear la atmósfera perfecta.",
+    "rep": [
+      { "moment": "Jazz & Clásicos", "title": "Fly Me to the Moon / La Vie en Rose / My Way / Bésame Mucho" },
+      { "moment": "Bandas Sonoras", "title": "La La Land / Juego de Tronos / Cinema Paradiso / Titanic" },
+      { "moment": "Pop & Rock", "title": "Bohemian Rhapsody (Queen) / Thinking Out Loud (Ed Sheeran) / Chandelier (Sia)" },
+      { "moment": "Folk & New Age", "title": "Enya / Ludovico Einaudi / El Cant dels Ocells" }
+    ]
+  },
+  "otros_eventos": {
+    "hero_title": "Más allá de tu boda",
+    "hero_subtitle": "Conciertos de música clásica, bandas sonoras y eventos corporativos",
+    "intro_title": "Nuestra música no tiene límites",
+    "intro_p1": "El talento y la versatilidad de Trio Euterpe nos permite abarcar mucho más que ceremonias nupciales. Como músicos profesionales en activo, hemos llevado nuestra música a auditorios, teatros y eventos exclusivos.",
+    "intro_p2": "Ofrecemos ciclos de conciertos temáticos, desde recitales puramente clásicos (explorando obras desde el Barroco hasta el Romanticismo) hasta espectaculares monográficos dedicados a los compositores de música de cine más laureados (Hans Zimmer, John Williams, Ennio Morricone).",
+    "card_1_title": "Música Clásica",
+    "card_1_desc": "Auditorios, teatros y actos solemnes institucionales.",
+    "card_2_title": "Bandas Sonoras",
+    "card_2_desc": "Conciertos inmersivos dedicados a la magia del séptimo arte."
+  },
+  "footer": {
+    "rights": "Todos los derechos reservados.",
+    "slogan": "Haciendo de tu evento algo inolvidable a través de la elegancia musical."
+  }
+}

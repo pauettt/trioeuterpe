@@ -1,0 +1,135 @@
+{
+  "navbar": {
+    "inicio": "Inici",
+    "ceremonias": "Cerimònies",
+    "cocteles": "Còctels i Aperitius",
+    "otros_eventos": "Altres Esdeveniments",
+    "contactar": "Contactar"
+  },
+  "hero": {
+    "trio": "Trio",
+    "euterpe": "Euterpe",
+    "slogan": "Posem música als teus moments especials.",
+    "sub_slogan": "Celebra-ho amb música i serà recordat per sempre",
+    "cta": "Descobreix el nostre repertori"
+  },
+  "trio_presentation": {
+    "badge": "Coneix-nos",
+    "title": "L'excel·lència musical al servei de les teves emocions",
+    "p1": "Som Trio Euterpe, una formació de cambra composta per músics professionals amb àmplia trajectòria i formació als conservatoris més prestigiosos.",
+    "p2": "La nostra passió és portar l'elegància i l'emoció de la música en directe als moments més importants de la teva vida. Des de la majestuositat de la música clàssica fins a les bandes sonores i versions pop més actuals.",
+    "p3": "Treballem cada detall acústic, estètic i emocional per oferir un so càlid, elegant i completament a mida. Cada esdeveniment és únic, i la nostra música s'adapta a vosaltres per crear records inesborrables."
+  },
+  "bento_gallery": {
+    "badge": "Galeria Visual",
+    "title": "La Banda Sonora Visual",
+    "desc": "Un cop d'ull a algunes de les celebracions on la nostra harmonia ha acompanyat moments únics."
+  },
+  "testimonials": {
+    "title": "Ressons i Ressonàncies",
+    "desc": "La nostra satisfacció més gran és saber que la nostra interpretació ha deixat una empremta inesborrable.",
+    "date_1": "Setembre 2023",
+    "text_1": "Van fer de la nostra cerimònia una cosa màgica. L'entrada de la núvia amb el Cànon de Pachelbel interpretat per ells va ser espectacular. Absolutament recomanables.",
+    "date_2": "Maig 2024",
+    "text_2": "Vam contractar el Trio Euterpe per al còctel i va ser un encert total. Tenen un repertori modern adaptat a clàssic que va deixar a tots els convidats meravellats.",
+    "date_3": "Juliol 2023",
+    "text_3": "Professionalitat des del minut u. Ens van ajudar a triar cada peça per a la nostra boda civil i el resultat va ser súper emocionant. Gràcies per tant."
+  },
+  "faq": {
+    "title": "Preguntes Freqüents",
+    "desc": "Resolem els dubtes més habituals sobre els nostres serveis.",
+    "q1": "Porteu el vostre propi equip d'amplificació?",
+    "a1": "Sí, disposem d'equip de so professional propi i d'alta qualitat. Ens adaptem a les necessitats acústiques de cada espai per garantir que la música soni perfecta, tant a esglésies com a finques obertes.",
+    "q2": "Podeu tocar en exteriors (jardins, platges)?",
+    "a2": "I tant. Tenim molta experiència tocant a l'aire lliure. Només necessitem assegurar-nos de tenir una petita zona d'ombra (si és ple estiu) i accés a una presa de corrent propera per als nostres equips de so.",
+    "q3": "Podem demanar una cançó que no està al repertori?",
+    "a3": "I tant que sí! Entenem que hi ha cançons amb un valor sentimental molt especial. Si ens aviseu amb prou antelació, podem preparar i arranjar pràcticament qualsevol tema exclusivament per a vosaltres.",
+    "q4": "Amb quanta antelació hem de reservar?",
+    "a4": "Recomanem fer la reserva amb almenys 6-8 mesos d'antelació, especialment si us caseu en temporada alta (maig a octubre). Tot i això, sempre ens podeu consultar disponibilitat per si tinguéssim la vostra data lliure."
+  },
+  "final_cta": {
+    "title": "Preparats per posar-li banda sonora al vostre esdeveniment?",
+    "desc": "Parlem sense compromís. Expliqueu-nos què teniu al cap i nosaltres ens encarregarem de crear l'atmosfera musical perfecta.",
+    "button": "Contactar Ara"
+  },
+  "ceremonies": {
+    "hero_title": "Cerimònies",
+    "hero_subtitle": "La banda sonora perfecta per al \"Sí, vull\"",
+    "intro_title": "El moment més important",
+    "intro_text": "Entenem que la cerimònia és el nucli emocional de la vostra boda. Ja sigui sota la solemnitat d'un temple o la calidesa d'un espai civil a l'aire lliure, adaptem la nostra interpretació perquè cada nota reflecteixi la vostra personalitat i emocioni cada convidat.",
+    "tabs": {
+      "videos": "Vídeos",
+      "audios": "Àudios",
+      "gallery": "Galeria",
+      "repertoire": "Repertori"
+    },
+    "repertoire_title": "Proposta de Repertori",
+    "empty": {
+      "coming_soon": "Pròximament",
+      "videos_text": "Estem preparant nous vídeos per a aquesta secció. Segueix el nostre canal de YouTube mentrestant!",
+      "audios_text": "Molt aviat pujarem gravacions d'estudi perquè escoltis la nostra qualitat sonora."
+    },
+    "rel": {
+      "title": "Cerimònia Religiosa",
+      "desc": "Comprenem a la perfecció els temps de la litúrgia. Garantim que cada entrada i cada lectura estiguin acompanyades amb sensibilitat, des de peces clàssiques fins a adaptacions modernes respectuoses.",
+      "rep": [
+        { "moment": "Entrada nuvi", "title": "Cantata 147 (Bach) / Nothing else matters (Metallica) / A gust del nuvi" },
+        { "moment": "Entrada núvia", "title": "Marxa nupcial (Mendelssohn) / Marxa nupcial (Wagner) / Cànon de Pachelbel / A gust de la núvia" },
+        { "moment": "Després del salm", "title": "Canticorum Jubilo (Händel) / Lascia ch'io pianga (Händel)" },
+        { "moment": "Sagrament", "title": "Adagio (Albinoni) / Ària en ReM (Bach)" },
+        { "moment": "Ofertori", "title": "Ave Maria (Schubert) / Ave Maria (Gounod)" },
+        { "moment": "Consagració", "title": "Adagio (Albinoni) / Ària en ReM (Bach)" },
+        { "moment": "Pau", "title": "Dona nobis pacem (Mozart)" },
+        { "moment": "Comunió", "title": "Cànon de Pachelbel / Suite of the day \"lunchtime\" (H.Burgoyne) / BSO (Llegendes de Passió, La Missió...)" },
+        { "moment": "Fi cerimònia", "title": "Llarg Hivern (Vivaldi) / Arribada reina de Saba (Händel) / Al·leluia de l'oratori d'El Messies (Händel)" },
+        { "moment": "Fotos", "title": "Música variada de fons mentre es fan les fotos" },
+        { "moment": "Sortida", "title": "Marxa nupcial (Mendelssohn) / Marxa nupcial (Wagner)" }
+      ]
+    },
+    "civ": {
+      "title": "Cerimònia Civil",
+      "desc": "La teva boda, les teves regles. Aportem proximitat acompanyant les lectures d'amics i familiars. És el moment ideal per a bandes sonores èpiques o aquells temes pop que us defineixen com a parella.",
+      "rep": [
+        { "moment": "Entrada nuvi", "title": "A elecció dels nuvis" },
+        { "moment": "Entrada núvia", "title": "A elecció dels nuvis / Cànon de Pachelbel / A Thousand Years (Christina Perri)" },
+        { "moment": "Anells", "title": "Ària en ReM (Bach) / Cànon de Pachelbel" },
+        { "moment": "Paraules d'amics o cerimoniant", "title": "Adagio (Albinoni) / Ària en ReM (Bach) / Suite of the day \"lunchtime\" (H. Burgoyne) / BSO (Llegendes de Passió, La Missió, Pearl Harbor, Braveheart, Memòries d'Àfrica) / Nuvole Bianche (Ludovico) / Una Mattina (Ludovico) / Yesterday (The Beatles)" },
+        { "moment": "Rituals", "title": "Cànon en D (Pachelbel) / Memory (Cats)" },
+        { "moment": "Fi de la cerimònia", "title": "Llarg Hivern (Vivaldi) / Can't Help Falling in Love (Elvis) / Here Comes the Sun (The Beatles)" },
+        { "moment": "Fotos", "title": "Música variada de fons mentre es fan les fotos" },
+        { "moment": "Sortida", "title": "Viva la Vida (Coldplay) / Marxa nupcial (Mendelssohn) / Marxa nupcial (Wagner)" }
+      ]
+    }
+  },
+  "coctel": {
+    "hero_title": "Còctels i Aperitius",
+    "hero_subtitle": "Welcome drinks i recepcions amb estil",
+    "intro_title": "L'art de trencar el gel",
+    "intro_p1": "El moment del còctel o els welcome drinks marquen el primer instant distès de la vostra celebració. El nostre objectiu és crear una atmosfera elegant i relaxada on els convidats puguin xerrar còmodament mentre gaudeixen d'una banda sonora exquisida.",
+    "intro_p2": "Des d'arranjaments acústics de les vostres cançons pop/rock preferides fins a clàssics del jazz que mai passen de moda. Un repertori dinàmic que sorprendrà i captivarà a parts iguals.",
+    "section_title": "Música per al Còctel",
+    "section_desc": "El moment del còctel o els welcome drinks marquen el primer instant distès de la vostra celebració. El nostre objectiu és crear una atmosfera elegant i relaxada on els convidats puguin xerrar còmodament mentre gaudeixen d'una banda sonora exquisida. Des d'arranjaments acústics de les vostres cançons pop/rock preferides fins a clàssics del jazz que mai passen de moda.",
+    "repertoire_disclaimer": "* Adaptem el repertori als vostres gustos per crear l'atmosfera perfecta.",
+    "rep": [
+      { "moment": "Jazz & Clàssics", "title": "Fly Me to the Moon / La Vie en Rose / My Way / Bésame Mucho" },
+      { "moment": "Bandes Sonores", "title": "La La Land / Joc de Trons / Cinema Paradiso / Titanic" },
+      { "moment": "Pop & Rock", "title": "Bohemian Rhapsody (Queen) / Thinking Out Loud (Ed Sheeran) / Chandelier (Sia)" },
+      { "moment": "Folk & New Age", "title": "Enya / Ludovico Einaudi / El Cant dels Ocells" }
+    ]
+  },
+  "otros_eventos": {
+    "hero_title": "Més enllà de la teva boda",
+    "hero_subtitle": "Concerts de música clàssica, bandes sonores i esdeveniments corporatius",
+    "intro_title": "La nostra música no té límits",
+    "intro_p1": "El talent i la versatilitat de Trio Euterpe ens permet abastar molt més que cerimònies nupcials. Com a músics professionals en actiu, hem portat la nostra música a auditoris, teatres i esdeveniments exclusius.",
+    "intro_p2": "Oferim cicles de concerts temàtics, des de recitals purament clàssics (explorant obres des del Barroc fins al Romanticisme) fins a espectaculars monogràfics dedicats als compositors de música de cinema més guardonats (Hans Zimmer, John Williams, Ennio Morricone).",
+    "card_1_title": "Música Clàssica",
+    "card_1_desc": "Auditoris, teatres i actes solemnes institucionals.",
+    "card_2_title": "Bandes Sonores",
+    "card_2_desc": "Concerts immersius dedicats a la màgia del setè art."
+  },
+  "footer": {
+    "rights": "Tots els drets reservats.",
+    "slogan": "Fent del teu esdeveniment una cosa inoblidable a través de l'elegància musical."
+  }
+}

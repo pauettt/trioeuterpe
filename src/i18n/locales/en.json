@@ -1,0 +1,135 @@
+{
+  "navbar": {
+    "inicio": "Home",
+    "ceremonias": "Ceremonies",
+    "cocteles": "Cocktails & Receptions",
+    "otros_eventos": "Other Events",
+    "contactar": "Contact"
+  },
+  "hero": {
+    "trio": "Trio",
+    "euterpe": "Euterpe",
+    "slogan": "We put music to your special moments.",
+    "sub_slogan": "Celebrate with music and it will be remembered forever",
+    "cta": "Discover our repertoire"
+  },
+  "trio_presentation": {
+    "badge": "About Us",
+    "title": "Musical excellence at the service of your emotions",
+    "p1": "We are Trio Euterpe, a chamber ensemble composed of professional musicians with extensive experience and training in the most prestigious conservatories.",
+    "p2": "Our passion is to bring the elegance and emotion of live music to the most important moments of your life. From the majesty of classical music to the latest soundtracks and pop covers.",
+    "p3": "We work on every acoustic, aesthetic, and emotional detail to offer a warm, elegant, and completely tailored sound. Every event is unique, and our music adapts to you to create unforgettable memories."
+  },
+  "bento_gallery": {
+    "badge": "Visual Gallery",
+    "title": "The Visual Soundtrack",
+    "desc": "A glimpse of some of the celebrations where our harmony has accompanied unique moments."
+  },
+  "testimonials": {
+    "title": "Echoes & Resonances",
+    "desc": "Our greatest satisfaction is knowing that our performance has left a lasting impression.",
+    "date_1": "September 2023",
+    "text_1": "They made our ceremony something magical. The bride's entrance with Pachelbel's Canon performed by them was spectacular. Absolutely recommended.",
+    "date_2": "May 2024",
+    "text_2": "We hired Trio Euterpe for the cocktail hour and it was a total success. They have a modern repertoire adapted to a classical style that left all the guests amazed.",
+    "date_3": "July 2023",
+    "text_3": "Professionalism from the very first minute. They helped us choose every piece for our civil wedding and the result was super emotional. Thank you so much."
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "desc": "We answer the most common questions about our services.",
+    "q1": "Do you bring your own amplification equipment?",
+    "a1": "Yes, we have our own high-quality professional sound equipment. We adapt to the acoustic needs of each space to ensure the music sounds perfect, whether in churches or open estates.",
+    "q2": "Can you play outdoors (gardens, beaches)?",
+    "a2": "Of course. We have a lot of experience playing outdoors. We just need to make sure we have a small shaded area (in the height of summer) and access to a nearby power outlet for our sound equipment.",
+    "q3": "Can we request a song that is not in the repertoire?",
+    "a3": "Absolutely! We understand there are songs with very special sentimental value. If you give us enough notice, we can arrange and prepare practically any song exclusively for you.",
+    "q4": "How far in advance should we book?",
+    "a4": "We recommend booking at least 6-8 months in advance, especially if you are getting married in high season (May to October). However, you can always check our availability just in case your date is free."
+  },
+  "final_cta": {
+    "title": "Ready to put a soundtrack to your event?",
+    "desc": "Let's talk with no obligation. Tell us what you have in mind and we will take care of creating the perfect musical atmosphere.",
+    "button": "Contact Now"
+  },
+  "ceremonies": {
+    "hero_title": "Ceremonies",
+    "hero_subtitle": "The perfect soundtrack for your \"I do\"",
+    "intro_title": "The most important moment",
+    "intro_text": "We understand that the ceremony is the emotional core of your wedding. Whether under the solemnity of a temple or the warmth of an outdoor civil space, we adapt our performance so that every note reflects your personality and moves every guest.",
+    "tabs": {
+      "videos": "Videos",
+      "audios": "Audios",
+      "gallery": "Gallery",
+      "repertoire": "Repertoire"
+    },
+    "repertoire_title": "Repertoire Proposal",
+    "empty": {
+      "coming_soon": "Coming Soon",
+      "videos_text": "We are preparing new videos for this section. Follow our YouTube channel in the meantime!",
+      "audios_text": "We will be uploading studio recordings very soon so you can hear our sound quality."
+    },
+    "rel": {
+      "title": "Religious Ceremony",
+      "desc": "We perfectly understand the timing of the liturgy. We ensure that every entrance and every reading is accompanied with sensitivity, from classical pieces to respectful modern adaptations.",
+      "rep": [
+        { "moment": "Groom's Entrance", "title": "Cantata 147 (Bach) / Nothing Else Matters (Metallica) / Groom's Choice" },
+        { "moment": "Bride's Entrance", "title": "Wedding March (Mendelssohn) / Wedding March (Wagner) / Pachelbel's Canon / Bride's Choice" },
+        { "moment": "After the Psalm", "title": "Canticorum Jubilo (Handel) / Lascia ch'io pianga (Handel)" },
+        { "moment": "Sacrament", "title": "Adagio (Albinoni) / Aria in D Major (Bach)" },
+        { "moment": "Offertory", "title": "Ave Maria (Schubert) / Ave Maria (Gounod)" },
+        { "moment": "Consecration", "title": "Adagio (Albinoni) / Aria in D Major (Bach)" },
+        { "moment": "Peace", "title": "Dona Nobis Pacem (Mozart)" },
+        { "moment": "Communion", "title": "Pachelbel's Canon / Suite of the day \"Lunchtime\" (H. Burgoyne) / Soundtracks (Legends of the Fall, The Mission...)" },
+        { "moment": "End of Ceremony", "title": "Winter Largo (Vivaldi) / Arrival of the Queen of Sheba (Handel) / Hallelujah from Messiah (Handel)" },
+        { "moment": "Photos", "title": "Varied background music while photos are taken" },
+        { "moment": "Exit", "title": "Wedding March (Mendelssohn) / Wedding March (Wagner)" }
+      ]
+    },
+    "civ": {
+      "title": "Civil Ceremony",
+      "desc": "Your wedding, your rules. We bring warmth by accompanying readings from friends and family. It is the ideal moment for epic soundtracks or those pop songs that define you as a couple.",
+      "rep": [
+        { "moment": "Groom's Entrance", "title": "Couple's Choice" },
+        { "moment": "Bride's Entrance", "title": "Couple's Choice / Pachelbel's Canon / A Thousand Years (Christina Perri)" },
+        { "moment": "Rings", "title": "Aria in D Major (Bach) / Pachelbel's Canon" },
+        { "moment": "Words from friends or officiant", "title": "Adagio (Albinoni) / Aria in D Major (Bach) / Suite of the day \"Lunchtime\" (H. Burgoyne) / Soundtracks (Legends of the Fall, The Mission, Pearl Harbor, Braveheart, Out of Africa) / Nuvole Bianche (Ludovico) / Una Mattina (Ludovico) / Yesterday (The Beatles)" },
+        { "moment": "Rituals", "title": "Canon in D (Pachelbel) / Memory (Cats)" },
+        { "moment": "End of Ceremony", "title": "Winter Largo (Vivaldi) / Can't Help Falling in Love (Elvis) / Here Comes the Sun (The Beatles)" },
+        { "moment": "Photos", "title": "Varied background music while photos are taken" },
+        { "moment": "Exit", "title": "Viva La Vida (Coldplay) / Wedding March (Mendelssohn) / Wedding March (Wagner)" }
+      ]
+    }
+  },
+  "coctel": {
+    "hero_title": "Cocktails & Appetizers",
+    "hero_subtitle": "Welcome drinks and stylish receptions",
+    "intro_title": "The art of breaking the ice",
+    "intro_p1": "The cocktail hour or welcome drinks mark the first relaxed moment of your celebration. Our goal is to create an elegant and laid-back atmosphere where guests can comfortably chat while enjoying an exquisite soundtrack.",
+    "intro_p2": "From acoustic arrangements of your favorite pop/rock songs to jazz classics that never go out of style. A dynamic repertoire that will surprise and captivate in equal parts.",
+    "section_title": "Music for the Cocktail",
+    "section_desc": "The cocktail hour or welcome drinks mark the first relaxed moment of your celebration. Our goal is to create an elegant and laid-back atmosphere where guests can comfortably chat while enjoying an exquisite soundtrack. From acoustic arrangements of your favorite pop/rock songs to jazz classics that never go out of style.",
+    "repertoire_disclaimer": "* We adapt the repertoire to your tastes to create the perfect atmosphere.",
+    "rep": [
+      { "moment": "Jazz & Classics", "title": "Fly Me to the Moon / La Vie en Rose / My Way / Bésame Mucho" },
+      { "moment": "Soundtracks", "title": "La La Land / Game of Thrones / Cinema Paradiso / Titanic" },
+      { "moment": "Pop & Rock", "title": "Bohemian Rhapsody (Queen) / Thinking Out Loud (Ed Sheeran) / Chandelier (Sia)" },
+      { "moment": "Folk & New Age", "title": "Enya / Ludovico Einaudi / El Cant dels Ocells" }
+    ]
+  },
+  "otros_eventos": {
+    "hero_title": "Beyond your wedding",
+    "hero_subtitle": "Classical music concerts, soundtracks, and corporate events",
+    "intro_title": "Our music has no limits",
+    "intro_p1": "The talent and versatility of Trio Euterpe allows us to cover much more than wedding ceremonies. As active professional musicians, we have taken our music to auditoriums, theaters, and exclusive events.",
+    "intro_p2": "We offer themed concert cycles, from purely classical recitals (exploring works from the Baroque to the Romantic period) to spectacular monographics dedicated to the most awarded film music composers (Hans Zimmer, John Williams, Ennio Morricone).",
+    "card_1_title": "Classical Music",
+    "card_1_desc": "Auditoriums, theaters, and solemn institutional events.",
+    "card_2_title": "Soundtracks",
+    "card_2_desc": "Immersive concerts dedicated to the magic of the seventh art."
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "slogan": "Making your event unforgettable through musical elegance."
+  }
+}

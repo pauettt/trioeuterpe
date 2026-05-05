@@ -1,0 +1,135 @@
+{
+  "navbar": {
+    "inicio": "Startseite",
+    "ceremonias": "Zeremonien",
+    "cocteles": "Cocktails & Empfänge",
+    "otros_eventos": "Andere Events",
+    "contactar": "Kontakt"
+  },
+  "hero": {
+    "trio": "Trio",
+    "euterpe": "Euterpe",
+    "slogan": "Wir untermalen Ihre besonderen Momente mit Musik.",
+    "sub_slogan": "Feiern Sie mit Musik und es wird unvergesslich bleiben",
+    "cta": "Entdecken Sie unser Repertoire"
+  },
+  "trio_presentation": {
+    "badge": "Über uns",
+    "title": "Musikalische Exzellenz im Dienste Ihrer Emotionen",
+    "p1": "Wir sind Trio Euterpe, ein Kammermusik-Ensemble, bestehend aus professionellen Musikern mit umfassender Erfahrung und Ausbildung an den renommiertesten Konservatorien.",
+    "p2": "Unsere Leidenschaft ist es, die Eleganz und Emotion der Live-Musik zu den wichtigsten Momenten Ihres Lebens zu bringen. Von der Majestät der klassischen Musik bis hin zu aktuellen Soundtracks und Pop-Covern.",
+    "p3": "Wir arbeiten an jedem akustischen, ästhetischen und emotionalen Detail, um einen warmen, eleganten und komplett maßgeschneiderten Klang zu bieten. Jedes Event ist einzigartig, und unsere Musik passt sich Ihnen an, um unvergessliche Erinnerungen zu schaffen."
+  },
+  "bento_gallery": {
+    "badge": "Visuelle Galerie",
+    "title": "Der visuelle Soundtrack",
+    "desc": "Ein Einblick in einige der Feierlichkeiten, bei denen unsere Harmonie einzigartige Momente begleitet hat."
+  },
+  "testimonials": {
+    "title": "Echos & Resonanzen",
+    "desc": "Unsere größte Zufriedenheit ist zu wissen, dass unsere Darbietung einen unvergesslichen Eindruck hinterlassen hat.",
+    "date_1": "September 2023",
+    "text_1": "Sie haben unsere Zeremonie zu etwas Magischem gemacht. Der Einzug der Braut mit dem Kanon von Pachelbel war spektakulär. Absolut empfehlenswert.",
+    "date_2": "Mai 2024",
+    "text_2": "Wir haben das Trio Euterpe für den Cocktail gebucht und es war ein voller Erfolg. Sie haben ein modernes Repertoire im klassischen Stil, das alle Gäste begeistert hat.",
+    "date_3": "Juli 2023",
+    "text_3": "Professionalität von der ersten Minute an. Sie halfen uns, jedes Stück für unsere standesamtliche Trauung auszuwählen, und das Ergebnis war sehr emotional. Vielen Dank."
+  },
+  "faq": {
+    "title": "Häufig gestellte Fragen",
+    "desc": "Wir beantworten die häufigsten Fragen zu unseren Dienstleistungen.",
+    "q1": "Bringen Sie Ihre eigene Verstärkungsanlage mit?",
+    "a1": "Ja, wir verfügen über eine eigene, hochwertige professionelle Tonanlage. Wir passen uns den akustischen Gegebenheiten jedes Raumes an, damit die Musik perfekt klingt, sei es in Kirchen oder auf offenen Fincas.",
+    "q2": "Können Sie auch im Freien spielen (Gärten, Strände)?",
+    "a2": "Natürlich. Wir haben viel Erfahrung mit Auftritten im Freien. Wir müssen nur sicherstellen, dass wir (im Hochsommer) etwas Schatten und Zugang zu einer Steckdose für unsere Anlage haben.",
+    "q3": "Können wir uns ein Lied wünschen, das nicht im Repertoire ist?",
+    "a3": "Aber natürlich! Wir verstehen, dass es Lieder mit einem ganz besonderen emotionalen Wert gibt. Wenn Sie uns rechtzeitig Bescheid geben, können wir fast jedes Lied exklusiv für Sie arrangieren und einstudieren.",
+    "q4": "Wie lange im Voraus sollten wir buchen?",
+    "a4": "Wir empfehlen eine Buchung mindestens 6-8 Monate im Voraus, besonders wenn Sie in der Hochsaison (Mai bis Oktober) heiraten. Sie können aber jederzeit nachfragen, ob Ihr Wunschtermin noch frei ist."
+  },
+  "final_cta": {
+    "title": "Bereit, Ihrem Event einen Soundtrack zu geben?",
+    "desc": "Lassen Sie uns unverbindlich sprechen. Erzählen Sie uns, was Sie sich vorstellen, und wir kümmern uns um die perfekte musikalische Atmosphäre.",
+    "button": "Jetzt kontaktieren"
+  },
+  "ceremonies": {
+    "hero_title": "Zeremonien",
+    "hero_subtitle": "Der perfekte Soundtrack für Ihr \"Ja, ich will\"",
+    "intro_title": "Der wichtigste Moment",
+    "intro_text": "Wir verstehen, dass die Zeremonie der emotionale Kern Ihrer Hochzeit ist. Ob in der Feierlichkeit einer Kirche oder in der Wärme eines standesamtlichen Raums im Freien, wir passen unsere Darbietung so an, dass jede Note Ihre Persönlichkeit widerspiegelt und jeden Gast berührt.",
+    "tabs": {
+      "videos": "Videos",
+      "audios": "Audios",
+      "gallery": "Galerie",
+      "repertoire": "Repertoire"
+    },
+    "repertoire_title": "Repertoire-Vorschlag",
+    "empty": {
+      "coming_soon": "Demnächst",
+      "videos_text": "Wir bereiten neue Videos für diesen Bereich vor. Folgen Sie in der Zwischenzeit unserem YouTube-Kanal!",
+      "audios_text": "Wir werden sehr bald Studioaufnahmen hochladen, damit Sie unsere Klangqualität hören können."
+    },
+    "rel": {
+      "title": "Kirchliche Trauung",
+      "desc": "Wir verstehen den Ablauf der Liturgie perfekt. Wir sorgen dafür, dass jeder Einzug und jede Lesung einfühlsam begleitet wird, von klassischen Stücken bis hin zu respektvollen modernen Adaptionen.",
+      "rep": [
+        { "moment": "Einzug des Bräutigams", "title": "Kantate 147 (Bach) / Nothing Else Matters (Metallica) / Nach Wahl des Bräutigams" },
+        { "moment": "Einzug der Braut", "title": "Hochzeitsmarsch (Mendelssohn) / Hochzeitsmarsch (Wagner) / Kanon von Pachelbel / Nach Wahl der Braut" },
+        { "moment": "Nach dem Psalm", "title": "Canticorum Jubilo (Händel) / Lascia ch'io pianga (Händel)" },
+        { "moment": "Sakrament", "title": "Adagio (Albinoni) / Arie in D-Dur (Bach)" },
+        { "moment": "Offertorium", "title": "Ave Maria (Schubert) / Ave Maria (Gounod)" },
+        { "moment": "Wandlung", "title": "Adagio (Albinoni) / Arie in D-Dur (Bach)" },
+        { "moment": "Friedensgruß", "title": "Dona Nobis Pacem (Mozart)" },
+        { "moment": "Kommunion", "title": "Kanon von Pachelbel / Suite of the day \"Lunchtime\" (H. Burgoyne) / Soundtracks (Legenden der Leidenschaft, The Mission...)" },
+        { "moment": "Ende der Zeremonie", "title": "Winter Largo (Vivaldi) / Ankunft der Königin von Saba (Händel) / Halleluja aus dem Messias (Händel)" },
+        { "moment": "Fotos", "title": "Abwechslungsreiche Hintergrundmusik während des Fotografierens" },
+        { "moment": "Auszug", "title": "Hochzeitsmarsch (Mendelssohn) / Hochzeitsmarsch (Wagner)" }
+      ]
+    },
+    "civ": {
+      "title": "Standesamtliche Trauung",
+      "desc": "Ihre Hochzeit, Ihre Regeln. Wir bringen Nähe, indem wir Lesungen von Freunden und Familie begleiten. Es ist der ideale Moment für epische Soundtracks oder Pop-Songs, die Sie als Paar ausmachen.",
+      "rep": [
+        { "moment": "Einzug des Bräutigams", "title": "Nach Wahl des Paares" },
+        { "moment": "Einzug der Braut", "title": "Nach Wahl des Paares / Kanon von Pachelbel / A Thousand Years (Christina Perri)" },
+        { "moment": "Ringe", "title": "Arie in D-Dur (Bach) / Kanon von Pachelbel" },
+        { "moment": "Worte von Freunden oder Trauredner", "title": "Adagio (Albinoni) / Arie in D-Dur (Bach) / Suite of the day \"Lunchtime\" (H. Burgoyne) / Soundtracks (Legenden der Leidenschaft, The Mission, Pearl Harbor, Braveheart, Jenseits von Afrika) / Nuvole Bianche (Ludovico) / Una Mattina (Ludovico) / Yesterday (The Beatles)" },
+        { "moment": "Rituale", "title": "Kanon in D (Pachelbel) / Memory (Cats)" },
+        { "moment": "Ende der Zeremonie", "title": "Winter Largo (Vivaldi) / Can't Help Falling in Love (Elvis) / Here Comes the Sun (The Beatles)" },
+        { "moment": "Fotos", "title": "Abwechslungsreiche Hintergrundmusik während des Fotografierens" },
+        { "moment": "Auszug", "title": "Viva La Vida (Coldplay) / Hochzeitsmarsch (Mendelssohn) / Hochzeitsmarsch (Wagner)" }
+      ]
+    }
+  },
+  "coctel": {
+    "hero_title": "Cocktails & Aperitifs",
+    "hero_subtitle": "Welcome Drinks und stilvolle Empfänge",
+    "intro_title": "Die Kunst, das Eis zu brechen",
+    "intro_p1": "Die Cocktailstunde oder die Welcome Drinks markieren den ersten entspannten Moment Ihrer Feier. Unser Ziel ist es, eine elegante und ungezwungene Atmosphäre zu schaffen, in der sich die Gäste bequem unterhalten können, während sie einen exquisiten Soundtrack genießen.",
+    "intro_p2": "Von akustischen Arrangements Ihrer Lieblings-Pop/Rock-Songs bis hin zu Jazz-Klassikern, die nie aus der Mode kommen. Ein dynamisches Repertoire, das gleichermaßen überraschen und fesseln wird.",
+    "section_title": "Musik für den Cocktail",
+    "section_desc": "Die Cocktailstunde oder die Welcome Drinks markieren den ersten entspannten Moment Ihrer Feier. Unser Ziel ist es, eine elegante und ungezwungene Atmosphäre zu schaffen, in der sich die Gäste bequem unterhalten können, während sie einen exquisiten Soundtrack genießen. Von akustischen Arrangements Ihrer Lieblings-Pop/Rock-Songs bis hin zu Jazz-Klassikern, die nie aus der Mode kommen.",
+    "repertoire_disclaimer": "* Wir passen das Repertoire an Ihren Geschmack an, um die perfekte Atmosphäre zu schaffen.",
+    "rep": [
+      { "moment": "Jazz & Klassiker", "title": "Fly Me to the Moon / La Vie en Rose / My Way / Bésame Mucho" },
+      { "moment": "Soundtracks", "title": "La La Land / Game of Thrones / Cinema Paradiso / Titanic" },
+      { "moment": "Pop & Rock", "title": "Bohemian Rhapsody (Queen) / Thinking Out Loud (Ed Sheeran) / Chandelier (Sia)" },
+      { "moment": "Folk & New Age", "title": "Enya / Ludovico Einaudi / El Cant dels Ocells" }
+    ]
+  },
+  "otros_eventos": {
+    "hero_title": "Über Ihre Hochzeit hinaus",
+    "hero_subtitle": "Klassische Konzerte, Soundtracks und Firmenveranstaltungen",
+    "intro_title": "Unsere Musik kennt keine Grenzen",
+    "intro_p1": "Das Talent und die Vielseitigkeit des Trio Euterpe ermöglichen es uns, weit mehr als nur Hochzeitszeremonien zu begleiten. Als aktive professionelle Musiker haben wir unsere Musik in Auditorien, Theater und zu exklusiven Veranstaltungen gebracht.",
+    "intro_p2": "Wir bieten thematische Konzertzyklen an, von rein klassischen Liederabenden (mit Werken vom Barock bis zur Romantik) bis hin zu spektakulären Monografien, die den meistprämierten Filmmusikkomponisten gewidmet sind (Hans Zimmer, John Williams, Ennio Morricone).",
+    "card_1_title": "Klassische Musik",
+    "card_1_desc": "Auditorien, Theater und feierliche institutionelle Veranstaltungen.",
+    "card_2_title": "Soundtracks",
+    "card_2_desc": "Immersive Konzerte, die der Magie der siebten Kunst gewidmet sind."
+  },
+  "footer": {
+    "rights": "Alle Rechte vorbehalten.",
+    "slogan": "Wir machen Ihr Event durch musikalische Eleganz unvergesslich."
+  }
+}

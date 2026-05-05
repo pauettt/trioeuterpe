@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 const photos = [
   { id: 1, src: "/images/Lugares bonitos/IMG_20240504_120702346_HDR.jpg", span: "col-span-2 row-span-2" },
@@ -11,16 +12,18 @@ const photos = [
 ];
 
 export function BentoGallery() {
+  const { t } = useTranslation();
+
   return (
     <section className="py-24 bg-white w-full">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         <div className="text-center mb-16">
           <span className="text-primary font-sans tracking-[0.3em] uppercase text-sm mb-4 block">
-            Galería Visual
+            {t('bento_gallery.badge')}
           </span>
-          <h2 className="text-4xl md:text-5xl font-serif text-text mb-4">La Banda Sonora Visual</h2>
+          <h2 className="text-4xl md:text-5xl font-serif text-text mb-4">{t('bento_gallery.title')}</h2>
           <p className="text-text-muted font-sans max-w-2xl mx-auto text-lg">
-            Un vistazo a algunas de las celebraciones donde nuestra armonía ha acompañado momentos únicos.
+            {t('bento_gallery.desc')}
           </p>
         </div>
 

@@ -1,9 +1,14 @@
+import { useTranslation } from "react-i18next";
+
 export function Footer() {
+  const { t } = useTranslation();
+  const year = new Date().getFullYear();
+
   return (
     <footer className="py-16 bg-white border-t border-gray-100 text-center">
       <h2 className="font-serif text-3xl text-text mb-4">Trío Euterpe</h2>
       <p className="text-text-muted font-sans font-light max-w-md mx-auto mb-8">
-        Haciendo de tu evento algo inolvidable a través de la elegancia musical.
+        {t('footer.slogan')}
       </p>
       
       <div className="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-8 text-sm font-sans tracking-widest text-text mb-8">
@@ -32,7 +37,7 @@ export function Footer() {
       </div>
 
       <p className="text-xs text-gray-400 font-sans">
-        &copy; {new Date().getFullYear()} Trío Euterpe. Todos los derechos reservados.
+        &copy; {year} Trío Euterpe. {t('footer.rights')}
       </p>
     </footer>
   );

@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 export function TrioPresentation() {
+  const { t } = useTranslation();
+
   return (
     <section className="py-24 bg-surface w-full">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
@@ -40,20 +43,20 @@ export function TrioPresentation() {
               <div className="absolute bottom-4 left-4 w-4 h-4 border-b border-l border-primary/40"></div>
               <div className="absolute bottom-4 right-4 w-4 h-4 border-b border-r border-primary/40"></div>
               
-              <h2 className="text-sm font-sans tracking-[0.3em] text-primary uppercase mb-4 text-center">Conócenos</h2>
+              <h2 className="text-sm font-sans tracking-[0.3em] text-primary uppercase mb-4 text-center">{t('trio_presentation.badge')}</h2>
               <h3 className="text-3xl md:text-4xl font-serif text-text mb-8 leading-tight text-center">
-                La excelencia musical al servicio de tus emociones
+                {t('trio_presentation.title')}
               </h3>
               
               <div className="space-y-6 text-text-muted font-sans text-base font-light leading-relaxed">
                 <p>
-                  Somos Trio Euterpe, una formación de cámara compuesta por músicos profesionales con amplia trayectoria y formación en los conservatorios más prestigiosos.
+                  {t('trio_presentation.p1')}
                 </p>
                 <p>
-                  Nuestra pasión es llevar la elegancia y la emoción de la música en vivo a los momentos más importantes de tu vida. Desde la majestuosidad de la música clásica hasta las bandas sonoras y versiones pop más actuales.
+                  {t('trio_presentation.p2')}
                 </p>
                 <p>
-                  Trabajamos cada detalle acústico, estético y emocional para ofrecer un sonido cálido, elegante y completamente a medida. Cada evento es único, y nuestra música se adapta a vosotros para crear recuerdos imborrables.
+                  {t('trio_presentation.p3')}
                 </p>
               </div>
             </div>

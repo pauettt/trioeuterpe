@@ -3,52 +3,20 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Play, Image as ImageIcon, Music, Video } from "lucide-react";
 import { AudioPlayer } from "../components/AudioPlayer";
 import { PageTransition } from "../components/PageTransition";
-
-// --- DATOS ---
-
-const repCoctel = [
-  { moment: "Jazz & Clásicos", title: "Fly Me to the Moon / La Vie en Rose / My Way / Bésame Mucho" },
-  { moment: "Bandas Sonoras", title: "La La Land / Juego de Tronos / Cinema Paradiso / Titanic" },
-  { moment: "Pop & Rock", title: "Bohemian Rhapsody (Queen) / Thinking Out Loud (Ed Sheeran) / Chandelier (Sia)" },
-  { moment: "Folk & New Age", title: "Enya / Ludovico Einaudi / El Cant dels Ocells" }
-];
-
-const dataCoctel = {
-  title: "Música para el Cóctel",
-  description: "El momento del cóctel o los welcome drinks marcan el primer instante distendido de vuestra celebración. Nuestro objetivo es crear una atmósfera elegante y relajada donde los invitados puedan charlar cómodamente mientras disfrutan de una banda sonora exquisita. Desde arreglos acústicos de vuestras canciones pop/rock favoritas hasta clásicos del jazz que nunca pasan de moda.",
-  repertoire: repCoctel,
-  images: [
-    "/images/Lugares bonitos/IMG_20240504_120702346_HDR.jpg",
-    "/images/Instrumentos/Cello instrumento.JPG",
-    "/images/Otros bolos/IMG-20250705-WA0028.jpg"
-  ],
-  videos: [
-    "https://www.youtube.com/embed/YIMM2q_5jok",
-    "https://www.youtube.com/embed/kl_5G1XTSfI",
-    "https://www.youtube.com/embed/zto4Me-EDVw",
-    "https://www.youtube.com/embed/-QLR_w3QBA4",
-    "https://www.youtube.com/embed/mOzWBRRuVPE",
-    "https://www.youtube.com/embed/qsA90Sac9Vw",
-    "https://www.youtube.com/embed/pB5zcDkEssw"
-  ],
-  audios: [
-    { title: "We Are the Champions", composer: "Queen", src: "/audios/We are the champions.mp3" },
-    { title: "La Bella y la Bestia", composer: "BSO Disney (Alan Menken)", src: "/audios/bella y bestia.mp3" }
-  ]
-};
+import { useTranslation } from "react-i18next";
 
 // --- COMPONENTES AUXILIARES ---
 
 type Tab = 'videos' | 'audios' | 'galeria' | 'repertorio';
 
-function EventSection({ data, bgClass }: { data: any, bgClass: string }) {
+function EventSection({ data, bgClass, t }: { data: any, bgClass: string, t: any }) {
   const [activeTab, setActiveTab] = useState<Tab>('galeria');
 
   const tabs = [
-    { id: 'videos', label: 'Vídeos', icon: <Video size={16} /> },
-    { id: 'audios', label: 'Audios', icon: <Play size={16} /> },
-    { id: 'galeria', label: 'Galería', icon: <ImageIcon size={16} /> },
-    { id: 'repertorio', label: 'Repertorio', icon: <Music size={16} /> },
+    { id: 'videos', label: t('ceremonies.tabs.videos'), icon: <Video size={16} /> },
+    { id: 'audios', label: t('ceremonies.tabs.audios'), icon: <Play size={16} /> },
+    { id: 'galeria', label: t('ceremonies.tabs.gallery'), icon: <ImageIcon size={16} /> },
+    { id: 'repertorio', label: t('ceremonies.tabs.repertoire'), icon: <Music size={16} /> },
   ] as const;
 
   return (
@@ -127,7 +95,7 @@ function EventSection({ data, bgClass }: { data: any, bgClass: string }) {
                 <div className="absolute bottom-4 left-4 w-4 h-4 border-b border-l border-primary/40"></div>
                 <div className="absolute bottom-4 right-4 w-4 h-4 border-b border-r border-primary/40"></div>
 
-                <h4 className="text-2xl font-serif text-center text-primary-dark mb-10">Propuesta de Repertorio</h4>
+                <h4 className="text-2xl font-serif text-center text-primary-dark mb-10">{t('ceremonies.repertoire_title')}</h4>
                 <div className="space-y-8">
                   {data.repertoire.map((song: any, idx: number) => (
                     <motion.div 
@@ -143,7 +111,7 @@ function EventSection({ data, bgClass }: { data: any, bgClass: string }) {
                   ))}
                 </div>
                 <p className="text-center text-xs text-text-muted mt-8 uppercase tracking-widest">
-                  * Adaptamos el repertorio a vuestros gustos para crear la atmósfera perfecta.
+                  {t('coctel.repertoire_disclaimer')}
                 </p>
               </motion.div>
             )}
@@ -178,9 +146,9 @@ function EventSection({ data, bgClass }: { data: any, bgClass: string }) {
                 ) : (
                   <div className="text-center p-12">
                     <Video className="w-12 h-12 text-gray-300 mx-auto mb-4" />
-                    <h4 className="text-xl font-serif text-text mb-2">Próximamente</h4>
+                    <h4 className="text-xl font-serif text-text mb-2">{t('ceremonies.empty.coming_soon')}</h4>
                     <p className="text-text-muted font-sans font-light">
-                      Estamos preparando nuevos vídeos para esta sección. ¡Sigue nuestro canal de YouTube mientras tanto!
+                      {t('ceremonies.empty.videos_text')}
                     </p>
                   </div>
                 )}
@@ -206,9 +174,9 @@ function EventSection({ data, bgClass }: { data: any, bgClass: string }) {
                 ) : (
                   <div className="text-center p-12">
                     <Play className="w-12 h-12 text-gray-300 mx-auto mb-4" />
-                    <h4 className="text-xl font-serif text-text mb-2">Próximamente</h4>
+                    <h4 className="text-xl font-serif text-text mb-2">{t('ceremonies.empty.coming_soon')}</h4>
                     <p className="text-text-muted font-sans font-light">
-                      Muy pronto subiremos grabaciones de estudio para que escuches nuestra calidad sonora.
+                      {t('ceremonies.empty.audios_text')}
                     </p>
                   </div>
                 )}
@@ -225,6 +193,32 @@ function EventSection({ data, bgClass }: { data: any, bgClass: string }) {
 // --- PÁGINA PRINCIPAL ---
 
 export function Coctel() {
+  const { t } = useTranslation();
+
+  const dataCoctel = {
+    title: t('coctel.section_title'),
+    description: t('coctel.section_desc'),
+    repertoire: t('coctel.rep', { returnObjects: true }) as Array<{moment: string, title: string}>,
+    images: [
+      "/images/Lugares bonitos/IMG_20240504_120702346_HDR.jpg",
+      "/images/Instrumentos/Cello instrumento.JPG",
+      "/images/Otros bolos/IMG-20250705-WA0028.jpg"
+    ],
+    videos: [
+      "https://www.youtube.com/embed/YIMM2q_5jok",
+      "https://www.youtube.com/embed/kl_5G1XTSfI",
+      "https://www.youtube.com/embed/zto4Me-EDVw",
+      "https://www.youtube.com/embed/-QLR_w3QBA4",
+      "https://www.youtube.com/embed/mOzWBRRuVPE",
+      "https://www.youtube.com/embed/qsA90Sac9Vw",
+      "https://www.youtube.com/embed/pB5zcDkEssw"
+    ],
+    audios: [
+      { title: "We Are the Champions", composer: "Queen", src: "/audios/We are the champions.mp3" },
+      { title: "La Bella y la Bestia", composer: "BSO Disney (Alan Menken)", src: "/audios/bella y bestia.mp3" }
+    ]
+  };
+
   return (
     <PageTransition>
       <div className="w-full relative overflow-hidden bg-surface">
@@ -246,7 +240,7 @@ export function Coctel() {
               transition={{ duration: 0.8 }}
               className="text-5xl md:text-7xl font-serif text-white mb-6"
             >
-              Cócteles y Aperitivos
+              {t('coctel.hero_title')}
             </motion.h1>
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
@@ -254,7 +248,7 @@ export function Coctel() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-white/90 font-sans text-xl md:text-2xl font-light"
             >
-              Welcome drinks y recepciones con estilo
+              {t('coctel.hero_subtitle')}
             </motion.p>
           </div>
         </section>
@@ -268,19 +262,19 @@ export function Coctel() {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="text-3xl font-serif text-text mb-8">El arte de romper el hielo</h2>
+              <h2 className="text-3xl font-serif text-text mb-8">{t('coctel.intro_title')}</h2>
               <p className="text-text-muted font-sans text-lg leading-relaxed font-light mb-6">
-                El momento del cóctel o los <em>welcome drinks</em> marcan el primer instante distendido de vuestra celebración. Nuestro objetivo es crear una atmósfera elegante y relajada donde los invitados puedan charlar cómodamente mientras disfrutan de una banda sonora exquisita.
+                {t('coctel.intro_p1')}
               </p>
               <p className="text-text-muted font-sans text-lg leading-relaxed font-light">
-                Desde arreglos acústicos de vuestras canciones pop/rock favoritas hasta clásicos del jazz que nunca pasan de moda. Un repertorio dinámico que sorprenderá y cautivará a partes iguales.
+                {t('coctel.intro_p2')}
               </p>
             </motion.div>
           </div>
         </section>
 
         {/* Tabs Layout */}
-        <EventSection data={dataCoctel} bgClass="bg-surface" />
+        <EventSection data={dataCoctel} bgClass="bg-surface" t={t} />
         
       </div>
     </PageTransition>

@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 export function FinalCTA() {
+  const { t } = useTranslation();
+
   return (
     <section className="py-32 relative bg-primary-dark w-full overflow-hidden flex justify-center">
       {/* Elementos decorativos de fondo */}
@@ -23,7 +26,7 @@ export function FinalCTA() {
           transition={{ duration: 0.8 }}
           className="text-4xl md:text-5xl font-serif text-white mb-6"
         >
-          ¿Preparados para ponerle banda sonora a vuestro evento?
+          {t('final_cta.title')}
         </motion.h2>
         
         <motion.p 
@@ -33,7 +36,7 @@ export function FinalCTA() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-white/80 font-sans text-lg mb-12 max-w-2xl mx-auto font-light"
         >
-          Hablemos sin compromiso. Cuéntanos qué tenéis en mente y nosotros nos encargaremos de crear la atmósfera musical perfecta.
+          {t('final_cta.desc')}
         </motion.p>
         
         <motion.div
@@ -48,7 +51,7 @@ export function FinalCTA() {
             rel="noopener noreferrer"
             className="inline-block bg-white text-primary-dark font-sans tracking-[0.2em] uppercase text-sm px-10 py-4 rounded-full hover:bg-primary hover:text-white transition-all duration-300 shadow-xl hover:scale-105 hover:shadow-[0_0_25px_rgba(255,255,255,0.3)]"
           >
-            Contactar Ahora
+            {t('final_cta.button')}
           </a>
         </motion.div>
       </div>

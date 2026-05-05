@@ -3,84 +3,20 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Play, Image as ImageIcon, Music, Video } from "lucide-react";
 import { AudioPlayer } from "../components/AudioPlayer";
 import { PageTransition } from "../components/PageTransition";
-
-// --- DATOS ---
-
-const repReligiosa = [
-  { moment: "Entrada novio", title: "Cantata 147 (Bach) / Nothing else matters (Metallica) / A gusto del novio" },
-  { moment: "Entrada novia", title: "Marcha nupcial (Mendelssohn) / Marcha nupcial (Wagner) / Canon de Pachelbel / A gusto de la novia" },
-  { moment: "Después del salmo", title: "Canticorum Jubilo (Händel) / Lascia ch'io pianga (Händel)" },
-  { moment: "Sacramento", title: "Adagio (Albinoni) / Aria en ReM (Bach)" },
-  { moment: "Ofertorio", title: "Ave María (Schubert) / Ave María (Gounod)" },
-  { moment: "Consagración", title: "Adagio (Albinoni) / Aria en ReM (Bach)" },
-  { moment: "Paz", title: "Dona nobis pacem (Mozart)" },
-  { moment: "Comunión", title: "Canon de Pachelbel / Suite of the day \"lunchtime\" (H.Burgoyne) / BSO (Leyendas de Pasión, La Misión...)" },
-  { moment: "Fin ceremonia", title: "Largo Invierno (Vivaldi) / Llegada reina de Saba (Händel) / Aleluya del oratorio de El Mesiah (Händel)" },
-  { moment: "Fotos", title: "Música variada de fondo mientras se hacen las fotos" },
-  { moment: "Salida", title: "Marcha nupcial (Mendelssohn) / Marcha nupcial (Wagner)" }
-];
-
-const repCivil = [
-  { moment: "Entrada novio", title: "A elección de los novios" },
-  { moment: "Entrada novia", title: "A elección de los novios / Canon de Pachelbel / A Thousand Years (Christina Perri)" },
-  { moment: "Anillos", title: "Aria en ReM (Bach) / Canon de Pachelbel" },
-  { moment: "Palabras de amigos o ceremoniante", title: "Adagio (Albinoni) / Aria en ReM (Bach) / Suite of the day \"lunchtime\" (H.Burgoyne) / BSO (Leyendas de Pasión, La Misión, Pearl Harbor, Braveheart, Memorias de África) / Nuvole Bianche (Ludovico) / Una Mattina (Ludovico) / Yesterday (The Beatles)" },
-  { moment: "Rituales", title: "Canon en D (Pachelbel) / Memory (Cats)" },
-  { moment: "Fin ceremonia", title: "Largo Invierno (Vivaldi) / Can't Help Falling in Love (Elvis) / Here Comes the Sun (The Beatles)" },
-  { moment: "Fotos", title: "Música variada de fondo mientras se hacen las fotos" },
-  { moment: "Salida", title: "Viva la Vida (Coldplay) / Marcha nupcial (Mendelssohn) / Marcha nupcial (Wagner)" }
-];
-
-const dataReligiosa = {
-  title: "Ceremonia Religiosa",
-  description: "Comprendemos a la perfección los tiempos de la liturgia. Garantizamos que cada entrada y cada lectura estén acompañadas con sensibilidad, desde piezas clásicas hasta adaptaciones modernas respetuosas.",
-  repertoire: repReligiosa,
-  images: [
-    "/images/Iglesia/IMG-20240901-WA0000.jpg", 
-    "/images/Iglesia/IMG-20240901-WA0003.jpg", 
-    "/images/Iglesia/IMG_20240615_171709389.jpg"
-  ],
-  videos: [
-    "https://www.youtube.com/embed/l46vNInmIMc",
-    "https://www.youtube.com/embed/-QLR_w3QBA4",
-    "https://www.youtube.com/embed/g5r5_7ZtA8Q",
-    "https://www.youtube.com/embed/VQVtEttLD8I"
-  ],
-  audios: [
-    // { title: "Canon de Pachelbel", src: "/audios/ejemplo.mp3" }
-  ]
-};
-
-const dataCivil = {
-  title: "Ceremonia Civil",
-  description: "Tu boda, tus reglas. Aportamos cercanía acompañando las lecturas de amigos y familiares. Es el momento ideal para bandas sonoras épicas o esos temas pop que os definen como pareja.",
-  repertoire: repCivil,
-  images: [
-    "/images/Lugares bonitos/IMG_20240504_120702346_HDR.jpg", 
-    "/images/Los 3/Los3a.jpg", 
-    "/images/Los 3/3tocandoguay.jpg"
-  ],
-  videos: [
-    "https://www.youtube.com/embed/mJkA2dRw0bc",
-    "https://www.youtube.com/embed/-jjl5mF3cuA",
-    "https://www.youtube.com/embed/-QLR_w3QBA4",
-    "https://www.youtube.com/embed/U2MzDHGcsWo"
-  ],
-  audios: []
-};
+import { useTranslation } from "react-i18next";
 
 // --- COMPONENTES AUXILIARES ---
 
 type Tab = 'videos' | 'audios' | 'galeria' | 'repertorio';
 
-function CeremonySection({ data, bgClass }: { data: any, bgClass: string }) {
+function CeremonySection({ data, bgClass, t }: { data: any, bgClass: string, t: any }) {
   const [activeTab, setActiveTab] = useState<Tab>('galeria');
 
   const tabs = [
-    { id: 'videos', label: 'Vídeos', icon: <Video size={16} /> },
-    { id: 'audios', label: 'Audios', icon: <Play size={16} /> },
-    { id: 'galeria', label: 'Galería', icon: <ImageIcon size={16} /> },
-    { id: 'repertorio', label: 'Repertorio', icon: <Music size={16} /> },
+    { id: 'videos', label: t('ceremonies.tabs.videos'), icon: <Video size={16} /> },
+    { id: 'audios', label: t('ceremonies.tabs.audios'), icon: <Play size={16} /> },
+    { id: 'galeria', label: t('ceremonies.tabs.gallery'), icon: <ImageIcon size={16} /> },
+    { id: 'repertorio', label: t('ceremonies.tabs.repertoire'), icon: <Music size={16} /> },
   ] as const;
 
   return (
@@ -167,7 +103,7 @@ function CeremonySection({ data, bgClass }: { data: any, bgClass: string }) {
                 <div className="absolute bottom-4 left-4 w-4 h-4 border-b border-l border-primary/40"></div>
                 <div className="absolute bottom-4 right-4 w-4 h-4 border-b border-r border-primary/40"></div>
 
-                <h4 className="text-2xl font-serif text-center text-primary-dark mb-10">Propuesta de Repertorio</h4>
+                <h4 className="text-2xl font-serif text-center text-primary-dark mb-10">{t('ceremonies.repertoire_title')}</h4>
                 <div className="space-y-8">
                   {data.repertoire.map((song: any, idx: number) => (
                     <motion.div 
@@ -216,9 +152,9 @@ function CeremonySection({ data, bgClass }: { data: any, bgClass: string }) {
                 ) : (
                   <div className="text-center p-12">
                     <Video className="w-12 h-12 text-gray-300 mx-auto mb-4" />
-                    <h4 className="text-xl font-serif text-text mb-2">Próximamente</h4>
+                    <h4 className="text-xl font-serif text-text mb-2">{t('ceremonies.empty.coming_soon')}</h4>
                     <p className="text-text-muted font-sans font-light">
-                      Estamos preparando nuevos vídeos para esta sección. ¡Sigue nuestro canal de YouTube mientras tanto!
+                      {t('ceremonies.empty.videos_text')}
                     </p>
                   </div>
                 )}
@@ -244,9 +180,9 @@ function CeremonySection({ data, bgClass }: { data: any, bgClass: string }) {
                 ) : (
                   <div className="text-center p-12">
                     <Play className="w-12 h-12 text-gray-300 mx-auto mb-4" />
-                    <h4 className="text-xl font-serif text-text mb-2">Próximamente</h4>
+                    <h4 className="text-xl font-serif text-text mb-2">{t('ceremonies.empty.coming_soon')}</h4>
                     <p className="text-text-muted font-sans font-light">
-                      Muy pronto subiremos grabaciones de estudio para que escuches nuestra calidad sonora.
+                      {t('ceremonies.empty.audios_text')}
                     </p>
                   </div>
                 )}
@@ -263,6 +199,44 @@ function CeremonySection({ data, bgClass }: { data: any, bgClass: string }) {
 // --- PÁGINA PRINCIPAL ---
 
 export function Ceremonias() {
+  const { t } = useTranslation();
+
+  const dataReligiosa = {
+    title: t('ceremonies.rel.title'),
+    description: t('ceremonies.rel.desc'),
+    repertoire: t('ceremonies.rel.rep', { returnObjects: true }) as Array<{moment: string, title: string}>,
+    images: [
+      "/images/Iglesia/IMG-20240901-WA0000.jpg", 
+      "/images/Iglesia/IMG-20240901-WA0003.jpg", 
+      "/images/Iglesia/IMG_20240615_171709389.jpg"
+    ],
+    videos: [
+      "https://www.youtube.com/embed/l46vNInmIMc",
+      "https://www.youtube.com/embed/-QLR_w3QBA4",
+      "https://www.youtube.com/embed/g5r5_7ZtA8Q",
+      "https://www.youtube.com/embed/VQVtEttLD8I"
+    ],
+    audios: []
+  };
+
+  const dataCivil = {
+    title: t('ceremonies.civ.title'),
+    description: t('ceremonies.civ.desc'),
+    repertoire: t('ceremonies.civ.rep', { returnObjects: true }) as Array<{moment: string, title: string}>,
+    images: [
+      "/images/Lugares bonitos/IMG_20240504_120702346_HDR.jpg", 
+      "/images/Los 3/Los3a.jpg", 
+      "/images/Los 3/3tocandoguay.jpg"
+    ],
+    videos: [
+      "https://www.youtube.com/embed/mJkA2dRw0bc",
+      "https://www.youtube.com/embed/-jjl5mF3cuA",
+      "https://www.youtube.com/embed/-QLR_w3QBA4",
+      "https://www.youtube.com/embed/U2MzDHGcsWo"
+    ],
+    audios: []
+  };
+
   return (
     <PageTransition>
       <div className="w-full">
@@ -283,7 +257,7 @@ export function Ceremonias() {
               transition={{ duration: 0.8 }}
               className="text-5xl md:text-7xl font-serif text-white mb-6"
             >
-              Ceremonias
+              {t('ceremonies.hero_title')}
             </motion.h1>
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
@@ -291,7 +265,7 @@ export function Ceremonias() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-white/90 font-sans text-xl md:text-2xl font-light tracking-wide"
             >
-              La banda sonora perfecta para el "Sí, quiero"
+              {t('ceremonies.hero_subtitle')}
             </motion.p>
           </div>
         </section>
@@ -305,19 +279,19 @@ export function Ceremonias() {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="text-3xl font-serif text-text mb-8">El momento más importante</h2>
+              <h2 className="text-3xl font-serif text-text mb-8">{t('ceremonies.intro_title')}</h2>
               <p className="text-text-muted font-sans text-lg leading-relaxed font-light">
-                Entendemos que la ceremonia es el núcleo emocional de vuestra boda. Ya sea bajo la solemnidad de un templo o la calidez de un espacio civil al aire libre, adaptamos nuestra interpretación para que cada nota refleje vuestra personalidad y emocione a cada invitado.
+                {t('ceremonies.intro_text')}
               </p>
             </motion.div>
           </div>
         </section>
 
         {/* Ceremonia Religiosa */}
-        <CeremonySection data={dataReligiosa} bgClass="bg-surface" />
+        <CeremonySection data={dataReligiosa} bgClass="bg-surface" t={t} />
 
         {/* Ceremonia Civil */}
-        <CeremonySection data={dataCivil} bgClass="bg-background" />
+        <CeremonySection data={dataCivil} bgClass="bg-background" t={t} />
 
       </div>
     </PageTransition>

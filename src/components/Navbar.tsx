@@ -1,12 +1,15 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Globe } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isLangMenuOpen, setIsLangMenuOpen] = useState(false);
   const location = useLocation();
+  const { t, i18n } = useTranslation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,15 +20,28 @@ export function Navbar() {
   }, []);
 
   const links = [
-    { name: "Inicio", path: "/" },
-    { name: "Ceremonias", path: "/ceremonias" },
-    { name: "Cócteles y Aperitivos", path: "/cocteles" },
-    { name: "Otros Eventos", path: "/otros-eventos" },
+    { name: t('navbar.inicio'), path: "/" },
+    { name: t('navbar.ceremonias'), path: "/ceremonias" },
+    { name: t('navbar.cocteles'), path: "/cocteles" },
+    { name: t('navbar.otros_eventos'), path: "/otros-eventos" },
   ];
+
+  const languages = [
+    { code: 'es', label: 'ES' },
+    { code: 'ca', label: 'CA' },
+    { code: 'en', label: 'EN' },
+    { code: 'de', label: 'DE' },
+  ];
+
+  const changeLanguage = (lng: string) => {
+    i18n.changeLanguage(lng);
+    setIsLangMenuOpen(false);
+  };
 
   const isActive = (path: string) => location.pathname === path;
   const isHome = location.pathname === "/";
   const showHeartInNav = !isHome || isScrolled;
+  const textColorBase = isScrolled || location.pathname === "/" ? "text-text hover:text-primary" : "text-white/90 hover:text-white";
 
   return (
     <>
@@ -61,20 +77,13 @@ export function Navbar() {
                 </motion.div>
               )}
             </div>
-            <span className="text-2xl font-serif text-primary-dark">Trío Euterpe</span>
+            <span className={`text-2xl font-serif ${isScrolled || isHome ? "text-primary-dark" : "text-white"}`}>Trío Euterpe</span>
           </Link>
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex gap-8 items-center">
             {links.map((link) => {
-              const isHome = location.pathname === "/";
-              const textColor = isActive(link.path)
-                ? "text-primary font-medium"
-                : isScrolled
-                  ? "text-text hover:text-primary"
-                  : isHome
-                    ? "text-text hover:text-primary"
-                    : "text-white/90 hover:text-white";
+              const textColor = isActive(link.path) ? "text-primary font-medium" : textColorBase;
 
               return (
                 <Link
@@ -88,6 +97,38 @@ export function Navbar() {
               );
             })}
             
+            {/* Language Selector */}
+            <div className="relative">
+              <button 
+                onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
+                className={`flex items-center gap-1 font-sans text-sm uppercase tracking-widest transition-colors ${textColorBase}`}
+              >
+                <Globe size={16} />
+                {i18n.language.substring(0, 2).toUpperCase()}
+              </button>
+              
+              <AnimatePresence>
+                {isLangMenuOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 10 }}
+                    className="absolute top-full mt-2 left-1/2 -translate-x-1/2 bg-white rounded-lg shadow-xl border border-gray-100 py-2 min-w-[80px] z-50 flex flex-col"
+                  >
+                    {languages.map((lng) => (
+                      <button
+                        key={lng.code}
+                        onClick={() => changeLanguage(lng.code)}
+                        className={`px-4 py-2 text-sm font-sans tracking-widest hover:bg-primary/5 hover:text-primary transition-colors ${i18n.language.startsWith(lng.code) ? 'text-primary font-medium' : 'text-text-muted'}`}
+                      >
+                        {lng.label}
+                      </button>
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+
             <a
               href="https://wa.me/34675615089"
               target="_blank"
@@ -98,7 +139,7 @@ export function Navbar() {
                   : "border-white/50 text-white hover:bg-white hover:text-primary-dark"
               }`}
             >
-              Contactar
+              {t('navbar.contactar')}
             </a>
           </nav>
 
@@ -128,7 +169,7 @@ export function Navbar() {
             >
               <X size={32} />
             </button>
-            <nav className="flex flex-col gap-8 text-center">
+            <nav className="flex flex-col gap-8 text-center items-center">
               {links.map((link) => (
                 <Link
                   key={link.name}
@@ -141,6 +182,19 @@ export function Navbar() {
                   {link.name}
                 </Link>
               ))}
+              
+              {/* Mobile Language Selector */}
+              <div className="flex gap-4 mt-4">
+                {languages.map((lng) => (
+                  <button
+                    key={lng.code}
+                    onClick={() => { changeLanguage(lng.code); setIsMenuOpen(false); }}
+                    className={`text-lg font-sans tracking-widest ${i18n.language.startsWith(lng.code) ? 'text-primary font-bold' : 'text-text-muted'}`}
+                  >
+                    {lng.label}
+                  </button>
+                ))}
+              </div>
             </nav>
           </motion.div>
         )}

@@ -1,9 +1,11 @@
 import { motion, useScroll, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 
 export function Hero() {
   const { scrollY } = useScroll();
   const [isScrolled, setIsScrolled] = useState(false);
+  const { t } = useTranslation();
 
   useEffect(() => {
     return scrollY.onChange((latest) => setIsScrolled(latest > 50));
@@ -67,7 +69,7 @@ export function Hero() {
           transition={{ duration: 1, delay: 1 }}
           className="text-3xl md:text-4xl font-serif text-primary-dark tracking-wide mb-4"
         >
-          Ponemos música a tus momentos especiales.
+          {t('hero.slogan')}
         </motion.h2>
         
         <motion.p
@@ -76,7 +78,7 @@ export function Hero() {
           transition={{ duration: 1, delay: 1.3 }}
           className="text-sm md:text-base text-text-muted font-sans font-light tracking-[0.2em] max-w-2xl uppercase mb-10"
         >
-          Celébralo con música y será recordado para siempre
+          {t('hero.sub_slogan')}
         </motion.p>
 
         <motion.div
@@ -88,7 +90,7 @@ export function Hero() {
             href="/ceremonias"
             className="inline-flex items-center justify-center px-8 py-3 border border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300 rounded-full font-sans tracking-widest uppercase text-xs hover:scale-105 hover:shadow-[0_0_20px_rgba(181,149,47,0.3)]"
           >
-            Descubre nuestro repertorio
+            {t('hero.cta')}
           </a>
         </motion.div>
       </div>
