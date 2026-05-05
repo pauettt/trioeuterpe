@@ -6,7 +6,7 @@ const photos = [
   { id: 2, src: "/images/Instrumentos/Piano.jpg", span: "col-span-1 row-span-1" },
   { id: 3, src: "/images/Iglesia/IMG-20240901-WA0000.jpg", span: "col-span-1 row-span-1" },
   { id: 4, src: "/images/2 de nosotros/Espontanea.jpg", span: "col-span-1 row-span-2" },
-  { id: 5, src: "/images/Los 3/IMG_20240518_143311991_HDR.jpg", span: "col-span-2 row-span-1" },
+  { id: 5, src: "/images/Los 3/IMG_20240518_143308269_HDR.jpg", span: "col-span-2 row-span-1" },
   { id: 6, src: "/images/Marisa/Marisa sola.jpg", span: "col-span-1 row-span-1" },
   { id: 7, src: "/images/Los 3/fiestaaa.jpg", span: "col-span-1 row-span-1" },
 ];
