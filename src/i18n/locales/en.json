@@ -4,7 +4,10 @@
     "ceremonias": "Ceremonies",
     "cocteles": "Cocktails & Receptions",
     "otros_eventos": "Other Events",
-    "contactar": "Contact"
+    "contactar": "Contact",
+    "select_language": "Select language",
+    "open_menu": "Open menu",
+    "close_menu": "Close menu"
   },
   "hero": {
     "trio": "Trio",
@@ -67,7 +70,8 @@
     "empty": {
       "coming_soon": "Coming Soon",
       "videos_text": "We are preparing new videos for this section. Follow our YouTube channel in the meantime!",
-      "audios_text": "We will be uploading studio recordings very soon so you can hear our sound quality."
+      "audios_text": "We will be uploading studio recordings very soon so you can hear our sound quality.",
+      "repertoire_text": "We are preparing the repertoire for this category. It will be here very soon!"
     },
     "rel": {
       "title": "Religious Ceremony",
@@ -76,12 +80,12 @@
         { "moment": "Groom's Entrance", "title": "Cantata 147 (Bach) / Nothing Else Matters (Metallica) / Groom's Choice" },
         { "moment": "Bride's Entrance", "title": "Wedding March (Mendelssohn) / Wedding March (Wagner) / Pachelbel's Canon / Bride's Choice" },
         { "moment": "After the Psalm", "title": "Canticorum Jubilo (Handel) / Lascia ch'io pianga (Handel)" },
-        { "moment": "Sacrament", "title": "Adagio (Albinoni) / Aria in D Major (Bach)" },
+        { "moment": "Sacrament of Marriage", "title": "Adagio (Albinoni) / Aria in D Major (Bach) / Falling Slowly (Glen Hansard & Marketa Irglova) / Only Time (Enya)" },
         { "moment": "Offertory", "title": "Ave Maria (Schubert) / Ave Maria (Gounod)" },
         { "moment": "Consecration", "title": "Adagio (Albinoni) / Aria in D Major (Bach)" },
         { "moment": "Peace", "title": "Dona Nobis Pacem (Mozart)" },
         { "moment": "Communion", "title": "Pachelbel's Canon / Suite of the day \"Lunchtime\" (H. Burgoyne) / Soundtracks (Legends of the Fall, The Mission...)" },
-        { "moment": "End of Ceremony", "title": "Winter Largo (Vivaldi) / Arrival of the Queen of Sheba (Handel) / Hallelujah from Messiah (Handel)" },
+        { "moment": "End of Ceremony", "title": "Winter Largo (Vivaldi) / Hallelujah from Messiah (Handel) / Viva la Vida (Coldplay)" },
         { "moment": "Photos", "title": "Varied background music while photos are taken" },
         { "moment": "Exit", "title": "Wedding March (Mendelssohn) / Wedding March (Wagner)" }
       ]
@@ -109,13 +113,105 @@
     "intro_p2": "From acoustic arrangements of your favorite pop/rock songs to jazz classics that never go out of style. A dynamic repertoire that will surprise and captivate in equal parts.",
     "section_title": "Music for the Cocktail",
     "section_desc": "The cocktail hour or welcome drinks mark the first relaxed moment of your celebration. Our goal is to create an elegant and laid-back atmosphere where guests can comfortably chat while enjoying an exquisite soundtrack. From acoustic arrangements of your favorite pop/rock songs to jazz classics that never go out of style.",
-    "repertoire_disclaimer": "* We adapt the repertoire to your tastes to create the perfect atmosphere.",
-    "rep": [
-      { "moment": "Jazz & Classics", "title": "Fly Me to the Moon / La Vie en Rose / My Way / Bésame Mucho" },
-      { "moment": "Soundtracks", "title": "La La Land / Game of Thrones / Cinema Paradiso / Titanic" },
-      { "moment": "Pop & Rock", "title": "Bohemian Rhapsody (Queen) / Thinking Out Loud (Ed Sheeran) / Chandelier (Sia)" },
-      { "moment": "Folk & New Age", "title": "Enya / Ludovico Einaudi / El Cant dels Ocells" }
-    ]
+    "repertoire_categories": {
+      "clasico": "Classic",
+      "moderno": "Modern",
+      "mixto": "Mixed",
+      "welcome": "Welcome Drinks"
+    },
+    "rep": {
+      "clasico": [
+        "Over the Rainbow (Judy Garland)",
+        "Canon (Pachelbel)",
+        "Hallelujah (Leonard Cohen)",
+        "Love Me Tender (Elvis Presley)",
+        "The Pink Panther - Main Theme (Henry Mancini)",
+        "Blue Moon (Richard Rodgers)",
+        "Fly Me to the Moon (Frank Sinatra)",
+        "Cheek to Cheek (Irving Berlin)",
+        "My Way (Frank Sinatra)",
+        "River Flows in You (Yiruma)",
+        "Cinema Paradiso OST Medley (Ennio Morricone)",
+        "Yesterday (The Beatles)",
+        "Bésame Mucho (Consuelo Velázquez)",
+        "Raindrops (B.J. Thomas)",
+        "Can't Help Falling in Love (Elvis Presley)",
+        "As Time Goes By (Herman Hupfeld)",
+        "Stand by Me (Ben E. King)",
+        "Afternoon in Paris (John Lewis)",
+        "Blue Bossa (Kenny Dorham)",
+        "Autumn Leaves - Trio Version (Joseph Kosma)",
+        "La Vie en Rose (Édith Piaf)",
+        "Ipanema Girl (Antônio Carlos Jobim)",
+        "Por una Cabeza (Carlos Gardel)",
+        "Algo Contigo (Los Panchos)"
+      ],
+      "moderno": [
+        "Nuvole Bianche (Ludovico Einaudi)",
+        "A Million Dreams (The Greatest Showman)",
+        "I Don't Want to Miss a Thing (Aerosmith)",
+        "All of Me (John Legend)",
+        "You're Still the One (Shania Twain)",
+        "Aladdin - OST Medley",
+        "Shallow (Lady Gaga)",
+        "A Thousand Years (Christina Perri)",
+        "Thinking Out Loud (Ed Sheeran)",
+        "Viva la Vida / Yellow (Coldplay)",
+        "Lemon Tree (Fool's Garden)",
+        "Can You Feel the Love Tonight (Elton John)",
+        "La La Land - OST Medley (Trio Version)",
+        "You've Got a Friend in Me (Toy Story)",
+        "Sweet Child O' Mine (Guns N' Roses)",
+        "Titanium (David Guetta ft. Sia)",
+        "We Are the Champions (Queen)",
+        "You'll Be in My Heart (Phil Collins)",
+        "Chandelier (Sia)",
+        "Game of Thrones - Main Theme",
+        "Ain't No Mountain High Enough (Marvin Gaye & Tammi Terrell)",
+        "El Fin del Mundo (La La Love You)",
+        "Baile Inolvidable (Bad Bunny)"
+      ],
+      "mixto": [
+        "Canon (Pachelbel)",
+        "Love Me Tender (Elvis Presley)",
+        "Wonderful World (Louis Armstrong)",
+        "As Time Goes By (Herman Hupfeld)",
+        "All of Me (John Legend)",
+        "Yesterday (The Beatles)",
+        "My Way (Frank Sinatra)",
+        "Fly Me to the Moon (Frank Sinatra)",
+        "Shallow (Lady Gaga)",
+        "Girl of Ipanema (Antônio Carlos Jobim)",
+        "Raindrops (B.J. Thomas)",
+        "Love (Nat King Cole)",
+        "La Vie en Rose (Édith Piaf)",
+        "Up (Disney)",
+        "Game of Thrones (Ramin Djawadi)",
+        "Lemon Tree (Fool's Garden)",
+        "Titanium (David Guetta ft. Sia)",
+        "Viva la Vida (Coldplay)",
+        "You've Got a Friend in Me (Toy Story)",
+        "Can You Feel the Love Tonight (Elton John)",
+        "City of Stars (Justin Hurwitz)",
+        "Sweet Child O' Mine (Guns N' Roses)",
+        "El Fin del Mundo (La La Love You)",
+        "Chandelier (Sia)"
+      ],
+      "welcome": [
+        "Una Mattina / Divenire (Ludovico Einaudi)",
+        "Gladiator - OST",
+        "Por ti Volaré (Andrea Bocelli)",
+        "River Flows in You (Yiruma)",
+        "Por Fin (Pablo Alborán)",
+        "Beauty and the Beast (Disney)",
+        "Someone You Loved (Lewis Capaldi)",
+        "Up - Main Theme (Disney)",
+        "Only Time (Enya)",
+        "Comptine d'un Autre Été (Amélie)",
+        "Dulce Introducción al Caos (Extremoduro)",
+        "Cinema Paradiso OST Medley (Ennio Morricone)"
+      ]
+    }
   },
   "otros_eventos": {
     "hero_title": "Beyond your wedding",
@@ -130,6 +226,35 @@
   },
   "footer": {
     "rights": "All rights reserved.",
-    "slogan": "Making your event unforgettable through musical elegance."
+    "slogan": "Making your event unforgettable through musical elegance.",
+    "email_label": "Email",
+    "phone_label": "Phone"
+  },
+  "not_found": {
+    "title": "Page not found",
+    "text": "Looks like this sheet of music doesn't exist. The link may be broken or the page may have moved.",
+    "cta": "Back to home"
+  },
+  "seo": {
+    "home": {
+      "title": "Trío Euterpe | Live Music for Weddings and Events in Mallorca",
+      "description": "Violin, cello and piano live music for weddings, ceremonies, cocktails and events in Mallorca. Classical and modern repertoire adapted to every moment."
+    },
+    "ceremonias": {
+      "title": "Ceremonies | Trío Euterpe",
+      "description": "Live music for religious and civil ceremonies in Mallorca: repertoire, videos, audio and wedding gallery."
+    },
+    "coctel": {
+      "title": "Cocktails & Receptions | Trío Euterpe",
+      "description": "Live music for the cocktail hour, welcome drinks and receptions at your wedding or event in Mallorca."
+    },
+    "otros_eventos": {
+      "title": "Other Events | Trío Euterpe",
+      "description": "Classical music concerts, film soundtracks and corporate events with Trío Euterpe in Mallorca."
+    },
+    "not_found": {
+      "title": "Page not found | Trío Euterpe",
+      "description": "The page you're looking for doesn't exist or has moved."
+    }
   }
 }

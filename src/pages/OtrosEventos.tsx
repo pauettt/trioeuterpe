@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { PageTransition } from "../components/PageTransition";
+import { Seo } from "../components/Seo";
 import { useTranslation } from "react-i18next";
 
 export function OtrosEventos() {
@@ -7,6 +8,7 @@ export function OtrosEventos() {
 
   return (
     <PageTransition>
+      <Seo title={t('seo.otros_eventos.title')} description={t('seo.otros_eventos.description')} />
       <div className="w-full">
       {/* Hero Centralizado */}
       <section className="relative h-[60vh] md:h-[75vh] w-full flex items-center justify-center pt-20">

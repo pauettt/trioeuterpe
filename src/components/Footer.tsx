@@ -13,11 +13,11 @@ export function Footer() {
       
       <div className="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-8 text-sm font-sans tracking-widest text-text mb-8">
         <a href="mailto:trioeuterpe@gmail.com" className="flex items-center gap-2 hover:text-primary transition-colors">
-          <span className="font-medium uppercase text-primary">Email:</span> trioeuterpe@gmail.com
+          <span className="font-medium uppercase text-primary">{t('footer.email_label')}:</span> trioeuterpe@gmail.com
         </a>
         <span className="hidden md:inline text-gray-300">|</span>
         <a href="tel:+34675615089" className="flex items-center gap-2 hover:text-primary transition-colors">
-          <span className="font-medium uppercase text-primary">Teléfono:</span> +34 675 615 089
+          <span className="font-medium uppercase text-primary">{t('footer.phone_label')}:</span> +34 675 615 089
         </a>
       </div>
 

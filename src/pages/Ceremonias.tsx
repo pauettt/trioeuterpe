@@ -3,13 +3,35 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Play, Image as ImageIcon, Music, Video } from "lucide-react";
 import { AudioPlayer } from "../components/AudioPlayer";
 import { PageTransition } from "../components/PageTransition";
+import { Seo } from "../components/Seo";
 import { useTranslation } from "react-i18next";
+import type { TFunction } from "i18next";
 
 // --- COMPONENTES AUXILIARES ---
 
 type Tab = 'videos' | 'audios' | 'galeria' | 'repertorio';
 
-function CeremonySection({ data, bgClass, t }: { data: any, bgClass: string, t: any }) {
+interface RepertoireSong {
+  moment: string;
+  title: string;
+}
+
+interface CeremonyAudio {
+  title: string;
+  composer: string;
+  src?: string;
+}
+
+interface CeremonyData {
+  title: string;
+  description: string;
+  repertoire: RepertoireSong[];
+  images: string[];
+  videos: string[];
+  audios: CeremonyAudio[];
+}
+
+function CeremonySection({ data, bgClass, t }: { data: CeremonyData, bgClass: string, t: TFunction }) {
   const [activeTab, setActiveTab] = useState<Tab>('galeria');
 
   const tabs = [
@@ -105,7 +127,7 @@ function CeremonySection({ data, bgClass, t }: { data: any, bgClass: string, t: 
 
                 <h4 className="text-2xl font-serif text-center text-primary-dark mb-10">{t('ceremonies.repertoire_title')}</h4>
                 <div className="space-y-8">
-                  {data.repertoire.map((song: any, idx: number) => (
+                  {data.repertoire.map((song, idx) => (
                     <motion.div 
                       key={idx} 
                       initial={{ opacity: 0, x: -10 }}
@@ -173,7 +195,7 @@ function CeremonySection({ data, bgClass, t }: { data: any, bgClass: string, t: 
               >
                 {data.audios.length > 0 ? (
                   <div className="w-full max-w-2xl mx-auto space-y-4 py-8 px-4">
-                    {data.audios.map((audio: any, idx: number) => (
+                    {data.audios.map((audio, idx) => (
                       <AudioPlayer key={idx} title={audio.title} composer={audio.composer} src={audio.src} />
                     ))}
                   </div>
@@ -239,10 +261,11 @@ export function Ceremonias() {
 
   return (
     <PageTransition>
+      <Seo title={t('seo.ceremonias.title')} description={t('seo.ceremonias.description')} />
       <div className="w-full">
         {/* Hero Centralizado */}
         <section className="relative h-[60vh] md:h-[75vh] w-full flex items-center justify-center pt-20 overflow-hidden">
-          <motion.img 
+          <motion.img
             src="/images/Iglesia/IMG_20240615_171709389.jpg" 
             alt="Ceremonias" 
             className="absolute inset-0 w-full h-full object-cover object-center"

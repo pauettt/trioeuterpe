@@ -8,6 +8,9 @@ interface AudioPlayerProps {
   src?: string;
 }
 
+// Solo una pista debe sonar a la vez: al reproducir una nueva, pausamos la anterior.
+let currentlyPlaying: HTMLAudioElement | null = null;
+
 export function AudioPlayer({ title, composer, src }: AudioPlayerProps) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [progress, setProgress] = useState(0);
@@ -15,6 +18,17 @@ export function AudioPlayer({ title, composer, src }: AudioPlayerProps) {
   const [duration, setDuration] = useState(0);
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const progressBarRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    const handlePause = () => {
+      setIsPlaying(false);
+      if (currentlyPlaying === audio) currentlyPlaying = null;
+    };
+    audio.addEventListener("pause", handlePause);
+    return () => audio.removeEventListener("pause", handlePause);
+  }, []);
 
   const formatTime = (time: number) => {
     if (isNaN(time)) return "0:00";
@@ -28,8 +42,12 @@ export function AudioPlayer({ title, composer, src }: AudioPlayerProps) {
       audioRef.current?.pause();
     } else {
       // Si no hay src, simplemente simulamos la reproducción visualmente
-      if (src) {
-        audioRef.current?.play();
+      if (src && audioRef.current) {
+        if (currentlyPlaying && currentlyPlaying !== audioRef.current) {
+          currentlyPlaying.pause();
+        }
+        currentlyPlaying = audioRef.current;
+        audioRef.current.play();
       }
     }
     setIsPlaying(!isPlaying);
@@ -85,6 +103,7 @@ export function AudioPlayer({ title, composer, src }: AudioPlayerProps) {
       <div className="flex items-center gap-4">
         <button
           onClick={togglePlay}
+          aria-label={`${isPlaying ? 'Pausar' : 'Reproducir'} ${title}`}
           className="w-12 h-12 flex items-center justify-center rounded-full bg-primary/10 text-primary-dark hover:bg-primary/20 transition-colors shrink-0"
         >
           {isPlaying ? <Pause size={20} fill="currentColor" /> : <Play size={20} fill="currentColor" className="ml-1" />}

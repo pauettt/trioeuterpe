@@ -1,5 +1,7 @@
+import { useEffect } from "react";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import { ScrollToTop } from "./components/ScrollToTop";
 import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
@@ -7,13 +9,19 @@ import { Home } from "./pages/Home";
 import { Ceremonias } from "./pages/Ceremonias";
 import { Coctel } from "./pages/Coctel";
 import { OtrosEventos } from "./pages/OtrosEventos";
+import { NotFound } from "./pages/NotFound";
 import { WhatsAppButton } from "./components/WhatsAppButton";
-import { CookieBanner } from "./components/CookieBanner";
 import { CustomCursor } from "./components/CustomCursor";
+import { ErrorBoundary } from "./components/ErrorBoundary";
 
 function AppContent() {
   const location = useLocation();
-  
+  const { i18n } = useTranslation();
+
+  useEffect(() => {
+    document.documentElement.lang = i18n.language.substring(0, 2);
+  }, [i18n.language]);
+
   return (
     <>
       <CustomCursor />
@@ -27,12 +35,12 @@ function AppContent() {
               <Route path="/ceremonias" element={<Ceremonias />} />
               <Route path="/cocteles" element={<Coctel />} />
               <Route path="/otros-eventos" element={<OtrosEventos />} />
+              <Route path="*" element={<NotFound />} />
             </Routes>
           </AnimatePresence>
         </div>
         <Footer />
         <WhatsAppButton />
-        <CookieBanner />
       </main>
     </>
   );
@@ -40,9 +48,11 @@ function AppContent() {
 
 function App() {
   return (
-    <BrowserRouter>
-      <AppContent />
-    </BrowserRouter>
+    <ErrorBoundary>
+      <BrowserRouter>
+        <AppContent />
+      </BrowserRouter>
+    </ErrorBoundary>
   );
 }
 

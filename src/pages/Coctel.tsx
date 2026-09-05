@@ -3,14 +3,38 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Play, Image as ImageIcon, Music, Video } from "lucide-react";
 import { AudioPlayer } from "../components/AudioPlayer";
 import { PageTransition } from "../components/PageTransition";
+import { Seo } from "../components/Seo";
 import { useTranslation } from "react-i18next";
+import type { TFunction } from "i18next";
 
 // --- COMPONENTES AUXILIARES ---
 
 type Tab = 'videos' | 'audios' | 'galeria' | 'repertorio';
+type RepCategory = 'clasico' | 'moderno' | 'mixto' | 'welcome';
 
-function EventSection({ data, bgClass, t }: { data: any, bgClass: string, t: any }) {
+interface CoctelAudio {
+  title: string;
+  composer: string;
+  src?: string;
+}
+
+interface EventImage {
+  src: string;
+  position?: string;
+}
+
+interface EventData {
+  title: string;
+  description: string;
+  repertoire: Record<RepCategory, string[]>;
+  images: (string | EventImage)[];
+  videos: string[];
+  audios: CoctelAudio[];
+}
+
+function EventSection({ data, bgClass, t }: { data: EventData, bgClass: string, t: TFunction }) {
   const [activeTab, setActiveTab] = useState<Tab>('galeria');
+  const [activeRepCategory, setActiveRepCategory] = useState<RepCategory>('clasico');
 
   const tabs = [
     { id: 'videos', label: t('ceremonies.tabs.videos'), icon: <Video size={16} /> },
@@ -19,12 +43,21 @@ function EventSection({ data, bgClass, t }: { data: any, bgClass: string, t: any
     { id: 'repertorio', label: t('ceremonies.tabs.repertoire'), icon: <Music size={16} /> },
   ] as const;
 
+  const repCategories = [
+    { id: 'clasico', label: t('coctel.repertoire_categories.clasico') },
+    { id: 'moderno', label: t('coctel.repertoire_categories.moderno') },
+    { id: 'mixto', label: t('coctel.repertoire_categories.mixto') },
+    { id: 'welcome', label: t('coctel.repertoire_categories.welcome') },
+  ] as const;
+
+  const activeRepList = data.repertoire?.[activeRepCategory] ?? [];
+
   return (
     <section className={`py-24 ${bgClass} w-full`}>
       <div className="max-w-6xl mx-auto px-4 md:px-8">
-        
+
         {/* Navegación de Pestañas */}
-        <div className="flex flex-wrap justify-center gap-2 md:gap-4 mb-12">
+        <div className="flex flex-wrap justify-center gap-2 md:gap-4 mb-6">
           {tabs.map((tab) => {
             const isActive = activeTab === tab.id;
             return (
@@ -53,6 +86,45 @@ function EventSection({ data, bgClass, t }: { data: any, bgClass: string, t: any
           })}
         </div>
 
+        {/* Submenú de Categorías de Repertorio */}
+        <AnimatePresence>
+          {activeTab === 'repertorio' && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.3 }}
+              className="overflow-hidden"
+            >
+              <div className="flex flex-wrap justify-center gap-2 md:gap-4 mb-12 pt-2">
+                {repCategories.map((cat) => {
+                  const isActive = activeRepCategory === cat.id;
+                  return (
+                    <button
+                      key={cat.id}
+                      onClick={() => setActiveRepCategory(cat.id as RepCategory)}
+                      className={`relative flex items-center gap-2 px-6 py-3 rounded-full font-sans text-sm tracking-widest uppercase transition-colors duration-300 ${
+                        isActive
+                          ? 'text-white'
+                          : 'bg-white border border-gray-200 text-text-muted hover:border-primary/50 hover:text-primary'
+                      }`}
+                    >
+                      {isActive && (
+                        <motion.div
+                          layoutId={`active-rep-category-pill-${data.title}`}
+                          className="absolute inset-0 bg-primary-dark rounded-full shadow-lg"
+                          transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                        />
+                      )}
+                      <span className="relative z-10">{cat.label}</span>
+                    </button>
+                  );
+                })}
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
         {/* Área de Contenido */}
         <div className="min-h-[400px] relative">
           <AnimatePresence mode="wait">
@@ -67,22 +139,27 @@ function EventSection({ data, bgClass, t }: { data: any, bgClass: string, t: any
                 transition={{ duration: 0.3 }}
                 className="grid grid-cols-1 md:grid-cols-3 gap-6"
               >
-                {data.images.map((img: string, idx: number) => (
-                  <div key={idx} className="aspect-[4/5] rounded-2xl overflow-hidden shadow-md group">
-                    <img 
-                      src={img} 
-                      alt={`Foto de ${data.title}`} 
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                    />
-                  </div>
-                ))}
+                {data.images.map((item, idx: number) => {
+                  const src = typeof item === 'string' ? item : item.src;
+                  const position = typeof item === 'object' ? item.position : undefined;
+                  return (
+                    <div key={idx} className="aspect-[4/5] rounded-2xl overflow-hidden shadow-md group">
+                      <img 
+                        src={src} 
+                        alt={`Foto de ${data.title}`} 
+                        style={position ? { objectPosition: position } : undefined}
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      />
+                    </div>
+                  );
+                })}
               </motion.div>
             )}
 
             {/* PESTAÑA: REPERTORIO */}
             {activeTab === 'repertorio' && (
               <motion.div
-                key="repertorio"
+                key={`repertorio-${activeRepCategory}`}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
@@ -96,23 +173,30 @@ function EventSection({ data, bgClass, t }: { data: any, bgClass: string, t: any
                 <div className="absolute bottom-4 right-4 w-4 h-4 border-b border-r border-primary/40"></div>
 
                 <h4 className="text-2xl font-serif text-center text-primary-dark mb-10">{t('ceremonies.repertoire_title')}</h4>
-                <div className="space-y-8">
-                  {data.repertoire.map((song: any, idx: number) => (
-                    <motion.div 
-                      key={idx} 
-                      initial={{ opacity: 0, x: -10 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.4, delay: idx * 0.1 }}
-                      className="flex flex-col md:flex-row md:items-baseline gap-2 border-b border-gray-100 pb-4"
-                    >
-                      <p className="text-sm font-bold text-primary uppercase tracking-widest md:w-1/3 shrink-0">{song.moment}</p>
-                      <p className="text-text font-sans font-light md:w-2/3">{song.title}</p>
-                    </motion.div>
-                  ))}
-                </div>
-                <p className="text-center text-xs text-text-muted mt-8 uppercase tracking-widest">
-                  {t('coctel.repertoire_disclaimer')}
-                </p>
+                {activeRepList.length > 0 ? (
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-4">
+                    {activeRepList.map((song, idx) => (
+                      <motion.div
+                        key={idx}
+                        initial={{ opacity: 0, x: -10 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.3, delay: Math.min(idx * 0.04, 1) }}
+                        className="flex items-baseline gap-3 border-b border-gray-100 pb-3"
+                      >
+                        <span className="w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
+                        <p className="text-text font-sans font-light">{song}</p>
+                      </motion.div>
+                    ))}
+                  </div>
+                ) : (
+                  <div className="text-center py-8">
+                    <Music className="w-12 h-12 text-gray-300 mx-auto mb-4" />
+                    <h5 className="text-xl font-serif text-text mb-2">{t('ceremonies.empty.coming_soon')}</h5>
+                    <p className="text-text-muted font-sans font-light">
+                      {t('ceremonies.empty.repertoire_text')}
+                    </p>
+                  </div>
+                )}
               </motion.div>
             )}
 
@@ -167,7 +251,7 @@ function EventSection({ data, bgClass, t }: { data: any, bgClass: string, t: any
               >
                 {data.audios.length > 0 ? (
                   <div className="w-full max-w-2xl mx-auto space-y-4 py-8 px-4">
-                    {data.audios.map((audio: any, idx: number) => (
+                    {data.audios.map((audio, idx) => (
                       <AudioPlayer key={idx} title={audio.title} composer={audio.composer} src={audio.src} />
                     ))}
                   </div>
@@ -198,11 +282,11 @@ export function Coctel() {
   const dataCoctel = {
     title: t('coctel.section_title'),
     description: t('coctel.section_desc'),
-    repertoire: t('coctel.rep', { returnObjects: true }) as Array<{moment: string, title: string}>,
+    repertoire: t('coctel.rep', { returnObjects: true }) as Record<'clasico' | 'moderno' | 'mixto' | 'welcome', string[]>,
     images: [
       "/images/Lugares bonitos/IMG_20240504_120702346_HDR.jpg",
       "/images/Instrumentos/Cello instrumento.JPG",
-      "/images/Otros bolos/IMG-20250705-WA0028.jpg"
+      { src: "/images/Los 3/3 en jardin.jpg", position: "25% center" }
     ],
     videos: [
       "https://www.youtube.com/embed/YIMM2q_5jok",
@@ -221,8 +305,9 @@ export function Coctel() {
 
   return (
     <PageTransition>
+      <Seo title={t('seo.coctel.title')} description={t('seo.coctel.description')} />
       <div className="w-full relative overflow-hidden bg-surface">
-        
+
         {/* Hero Section */}
         <section className="relative h-[60vh] md:h-[75vh] w-full flex items-center justify-center pt-20 overflow-hidden">
           <motion.img 

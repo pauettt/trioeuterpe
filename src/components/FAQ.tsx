@@ -48,6 +48,7 @@ export function FAQ() {
             >
               <button
                 onClick={() => toggleFAQ(index)}
+                aria-expanded={openIndex === index}
                 className="w-full text-left px-6 py-5 flex justify-between items-center focus:outline-none"
               >
                 <span className="font-serif text-lg text-text pr-8">{faq.question}</span>

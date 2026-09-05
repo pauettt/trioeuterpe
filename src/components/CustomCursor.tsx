@@ -25,38 +25,32 @@ export function CustomCursor() {
     const handleMouseLeave = () => setIsVisible(false);
     const handleMouseEnter = () => setIsVisible(true);
 
-    const handleLinkHoverStart = () => setIsHovering(true);
-    const handleLinkHoverEnd = () => setIsHovering(false);
+    // Delegación de eventos: un único listener en document, sin necesidad de
+    // reengancharse a elementos nuevos (evita fugas de listeners en cada
+    // cambio de pestaña/página, ya que el DOM cambia constantemente).
+    const handlePointerOver = (e: MouseEvent) => {
+      if ((e.target as Element)?.closest?.("a, button, input, [role='button']")) {
+        setIsHovering(true);
+      }
+    };
+    const handlePointerOut = (e: MouseEvent) => {
+      if ((e.target as Element)?.closest?.("a, button, input, [role='button']")) {
+        setIsHovering(false);
+      }
+    };
 
     window.addEventListener("mousemove", updateMousePosition);
     document.body.addEventListener("mouseleave", handleMouseLeave);
     document.body.addEventListener("mouseenter", handleMouseEnter);
-
-    // Add event listeners to all links and buttons for the hover effect
-    const addHoverListeners = () => {
-      const interactables = document.querySelectorAll("a, button, input, [role='button']");
-      interactables.forEach((el) => {
-        el.addEventListener("mouseenter", handleLinkHoverStart);
-        el.addEventListener("mouseleave", handleLinkHoverEnd);
-      });
-    };
-
-    // Initial setup and observer for dynamic elements
-    addHoverListeners();
-    const observer = new MutationObserver(addHoverListeners);
-    observer.observe(document.body, { childList: true, subtree: true });
+    document.body.addEventListener("mouseover", handlePointerOver);
+    document.body.addEventListener("mouseout", handlePointerOut);
 
     return () => {
       window.removeEventListener("mousemove", updateMousePosition);
       document.body.removeEventListener("mouseleave", handleMouseLeave);
       document.body.removeEventListener("mouseenter", handleMouseEnter);
-      
-      const interactables = document.querySelectorAll("a, button, input, [role='button']");
-      interactables.forEach((el) => {
-        el.removeEventListener("mouseenter", handleLinkHoverStart);
-        el.removeEventListener("mouseleave", handleLinkHoverEnd);
-      });
-      observer.disconnect();
+      document.body.removeEventListener("mouseover", handlePointerOver);
+      document.body.removeEventListener("mouseout", handlePointerOut);
     };
   }, [cursorX, cursorY, isVisible]);
 

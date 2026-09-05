@@ -41,7 +41,12 @@ export function Navbar() {
   const isActive = (path: string) => location.pathname === path;
   const isHome = location.pathname === "/";
   const showHeartInNav = !isHome || isScrolled;
-  const textColorBase = isScrolled || location.pathname === "/" ? "text-text hover:text-primary" : "text-white/90 hover:text-white";
+  // Solo las páginas con una imagen de héroe oscura a pantalla completa necesitan
+  // texto claro en el navbar antes de hacer scroll; el resto (incluida cualquier
+  // ruta futura, como la 404) tiene fondo claro y necesita texto oscuro.
+  const hasDarkHero = ["/ceremonias", "/cocteles", "/otros-eventos"].includes(location.pathname);
+  const useDarkText = isScrolled || !hasDarkHero;
+  const textColorBase = useDarkText ? "text-text hover:text-primary" : "text-white/90 hover:text-white";
 
   return (
     <>
@@ -77,7 +82,7 @@ export function Navbar() {
                 </motion.div>
               )}
             </div>
-            <span className={`text-2xl font-serif ${isScrolled || isHome ? "text-primary-dark" : "text-white"}`}>Trío Euterpe</span>
+            <span className={`text-2xl font-serif ${useDarkText ? "text-primary-dark" : "text-white"}`}>Trío Euterpe</span>
           </Link>
 
           {/* Desktop Nav */}
@@ -99,8 +104,11 @@ export function Navbar() {
             
             {/* Language Selector */}
             <div className="relative">
-              <button 
+              <button
                 onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
+                aria-label={t('navbar.select_language')}
+                aria-haspopup="true"
+                aria-expanded={isLangMenuOpen}
                 className={`flex items-center gap-1 font-sans text-sm uppercase tracking-widest transition-colors ${textColorBase}`}
               >
                 <Globe size={16} />
@@ -134,7 +142,7 @@ export function Navbar() {
               target="_blank"
               rel="noopener noreferrer"
               className={`font-sans text-xs uppercase tracking-[0.2em] px-6 py-3 border rounded-full transition-all duration-300 ${
-                isScrolled || location.pathname === "/"
+                useDarkText
                   ? "border-primary text-primary hover:bg-primary hover:text-white"
                   : "border-white/50 text-white hover:bg-white hover:text-primary-dark"
               }`}
@@ -147,8 +155,10 @@ export function Navbar() {
           <button
             className="md:hidden text-primary"
             onClick={() => setIsMenuOpen(true)}
+            aria-label={t('navbar.open_menu')}
+            aria-expanded={isMenuOpen}
           >
-            <Menu size={28} className={!isScrolled && location.pathname !== "/" ? "text-white" : "text-text"} />
+            <Menu size={28} className={useDarkText ? "text-text" : "text-white"} />
           </button>
         </div>
       </header>
@@ -166,6 +176,7 @@ export function Navbar() {
             <button
               className="absolute top-8 right-8 text-text"
               onClick={() => setIsMenuOpen(false)}
+              aria-label={t('navbar.close_menu')}
             >
               <X size={32} />
             </button>
