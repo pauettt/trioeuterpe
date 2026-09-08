@@ -69,7 +69,7 @@ export function Navbar() {
                     default: { duration: 0.3 }
                   }}
                 >
-                  <img src="/logo-frame.svg" alt="" className="w-full h-full object-contain" />
+                  <img src="/favicon.svg" alt="" className="w-full h-full object-contain" />
                 </motion.div>
               )}
             </div>
