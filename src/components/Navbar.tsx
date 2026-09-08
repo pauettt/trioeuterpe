@@ -60,25 +60,16 @@ export function Navbar() {
             <div className="w-10 h-10 flex items-center justify-center">
               {showHeartInNav && (
                 <motion.div
-                  layoutId="animated-heart"
+                  layoutId="animated-logo"
                   className="w-full h-full"
                   initial={false}
-                  animate={{ color: "#B5952F", opacity: 1 }}
-                  transition={{ 
+                  animate={{ opacity: 1 }}
+                  transition={{
                     layout: { type: "spring", stiffness: 200, damping: 25 },
                     default: { duration: 0.3 }
                   }}
                 >
-                  <svg
-                    width="100%"
-                    height="100%"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    stroke="currentColor"
-                    strokeWidth="0.5"
-                  >
-                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
-                  </svg>
+                  <img src="/logo-frame.svg" alt="" className="w-full h-full object-contain" />
                 </motion.div>
               )}
             </div>

@@ -15,35 +15,28 @@ export function Hero() {
     <div className="relative z-0 w-full h-screen overflow-hidden flex flex-col items-center justify-center bg-background pt-20">
       {/* Contenedor central (Corazón + Nombre) */}
       <div className="relative flex items-center justify-center w-full max-w-2xl aspect-square mb-8">
-        {/* Corazón animado de fondo */}
+        {/* Logo animado de fondo */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
           <AnimatePresence>
             {!isScrolled && (
               <motion.div
-                layoutId="animated-heart"
+                layoutId="animated-logo"
                 className="w-full h-full flex items-center justify-center"
                 initial={false}
-                animate={{ color: "#991b1b", opacity: 0.15 }}
-                transition={{ 
+                animate={{ opacity: 0.7 }}
+                transition={{
                   layout: { type: "spring", stiffness: 200, damping: 25 },
                   default: { duration: 0.3 }
                 }}
               >
-                <motion.svg
-                  width="100%"
-                  height="100%"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  stroke="currentColor"
-                  strokeWidth="0.5"
+                <motion.img
+                  src="/logo-frame.svg"
+                  alt=""
+                  className="w-full h-full object-contain"
                   initial={{ scale: 0.8 }}
                   animate={{ scale: [0.8, 1.05, 1] }}
                   transition={{ duration: 5, ease: "easeInOut", repeat: Infinity, repeatType: "mirror" }}
-                >
-                  <path
-                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
-                  />
-                </motion.svg>
+                />
               </motion.div>
             )}
           </AnimatePresence>
