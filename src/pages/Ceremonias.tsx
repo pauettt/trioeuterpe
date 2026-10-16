@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Play, Image as ImageIcon, Music, Video } from "lucide-react";
-import { AudioPlayer } from "../components/AudioPlayer";
+import { Image as ImageIcon, Music, Video } from "lucide-react";
 import { PageTransition } from "../components/PageTransition";
 import { Seo } from "../components/Seo";
 import { useTranslation } from "react-i18next";
@@ -9,17 +8,11 @@ import type { TFunction } from "i18next";
 
 // --- COMPONENTES AUXILIARES ---
 
-type Tab = 'videos' | 'audios' | 'galeria' | 'repertorio';
+type Tab = 'videos' | 'galeria' | 'repertorio';
 
 interface RepertoireSong {
   moment: string;
   title: string;
-}
-
-interface CeremonyAudio {
-  title: string;
-  composer: string;
-  src?: string;
 }
 
 interface CeremonyData {
@@ -28,7 +21,6 @@ interface CeremonyData {
   repertoire: RepertoireSong[];
   images: string[];
   videos: string[];
-  audios: CeremonyAudio[];
 }
 
 function CeremonySection({ data, bgClass, t }: { data: CeremonyData, bgClass: string, t: TFunction }) {
@@ -36,7 +28,6 @@ function CeremonySection({ data, bgClass, t }: { data: CeremonyData, bgClass: st
 
   const tabs = [
     { id: 'videos', label: t('ceremonies.tabs.videos'), icon: <Video size={16} /> },
-    { id: 'audios', label: t('ceremonies.tabs.audios'), icon: <Play size={16} /> },
     { id: 'galeria', label: t('ceremonies.tabs.gallery'), icon: <ImageIcon size={16} /> },
     { id: 'repertorio', label: t('ceremonies.tabs.repertoire'), icon: <Music size={16} /> },
   ] as const;
@@ -183,34 +174,6 @@ function CeremonySection({ data, bgClass, t }: { data: CeremonyData, bgClass: st
               </motion.div>
             )}
 
-            {/* PESTAÑA: AUDIOS */}
-            {activeTab === 'audios' && (
-              <motion.div
-                key="audios"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.3 }}
-                className="flex flex-col items-center justify-center h-full min-h-[300px] bg-white rounded-2xl border border-dashed border-gray-300"
-              >
-                {data.audios.length > 0 ? (
-                  <div className="w-full max-w-2xl mx-auto space-y-4 py-8 px-4">
-                    {data.audios.map((audio, idx) => (
-                      <AudioPlayer key={idx} title={audio.title} composer={audio.composer} src={audio.src} />
-                    ))}
-                  </div>
-                ) : (
-                  <div className="text-center p-12">
-                    <Play className="w-12 h-12 text-gray-300 mx-auto mb-4" />
-                    <h4 className="text-xl font-serif text-text mb-2">{t('ceremonies.empty.coming_soon')}</h4>
-                    <p className="text-text-muted font-sans font-light">
-                      {t('ceremonies.empty.audios_text')}
-                    </p>
-                  </div>
-                )}
-              </motion.div>
-            )}
-
           </AnimatePresence>
         </div>
       </div>
@@ -237,8 +200,7 @@ export function Ceremonias() {
       "https://www.youtube.com/embed/-QLR_w3QBA4",
       "https://www.youtube.com/embed/g5r5_7ZtA8Q",
       "https://www.youtube.com/embed/VQVtEttLD8I"
-    ],
-    audios: []
+    ]
   };
 
   const dataCivil = {
@@ -255,8 +217,7 @@ export function Ceremonias() {
       "https://www.youtube.com/embed/-jjl5mF3cuA",
       "https://www.youtube.com/embed/-QLR_w3QBA4",
       "https://www.youtube.com/embed/_GC5TydRlV0"
-    ],
-    audios: []
+    ]
   };
 
   return (
