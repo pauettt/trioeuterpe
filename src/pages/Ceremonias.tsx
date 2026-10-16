@@ -254,7 +254,7 @@ export function Ceremonias() {
       "https://www.youtube.com/embed/mJkA2dRw0bc",
       "https://www.youtube.com/embed/-jjl5mF3cuA",
       "https://www.youtube.com/embed/-QLR_w3QBA4",
-      "https://www.youtube.com/embed/U2MzDHGcsWo"
+      "https://www.youtube.com/embed/_GC5TydRlV0"
     ],
     audios: []
   };
